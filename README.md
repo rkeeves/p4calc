@@ -7,7 +7,7 @@ A basic calculator application for Patrician 4.
 
 TLDR: There's a simple spreadsheet(OpenOffice Calc) version [here](https://github.com/rkeeves/p4calc/blob/main/spreadsheet/p4calc.ods).
 
-Bagaluth posted a long time ago a bug demand calculation/planning spreadsheet.
+Bagaluth posted a long time ago a demand calculation/planning spreadsheet.
 It was fantastic except for one thing:
 it used approximate (based on experiments with the game) values for consumer and industry demand and other things.
 
