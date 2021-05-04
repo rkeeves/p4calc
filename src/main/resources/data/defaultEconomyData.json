@@ -1,0 +1,135 @@
+{
+  "economyParameters" : {
+    "globalMarketDemandMultiplier" :  1.0,
+    "kgPerBarrel" :  1900.0,
+    "consumerCount" :  10000,
+    "globalSellPriceFactor" :  1.75,
+    "workersPerWorkshop" :  25,
+    "wagePerWorker" :  6,
+    "fixedPropertyTax" :  40,
+    "fixedRunningCost" :  50
+  },
+  "products" : [
+  {
+    "name" : "wood",
+    "ingredients" : {},
+    "baseDemandInKg" : 2.5,
+    "productionPerWorkshop" : 6,
+    "basePrice" : 33.0
+  },{
+    "name" : "bricks",
+    "ingredients" : {},
+    "baseDemandInKg" : 5.0,
+    "productionPerWorkshop" : 6,
+    "basePrice" : 33.0
+  },{
+    "name" : "grain",
+    "ingredients" : {},
+    "baseDemandInKg" : 5.25,
+    "productionPerWorkshop" : 6,
+    "basePrice" : 33.0
+  },{
+    "name" : "hemp",
+    "ingredients" : {},
+    "baseDemandInKg" : 2.5,
+    "productionPerWorkshop" : 6,
+    "basePrice" : 33.0
+  },{
+    "name" : "wool",
+    "ingredients" : {},
+    "baseDemandInKg" : 2,
+    "productionPerWorkshop" : 4,
+    "basePrice" : 50.0
+  },{
+    "name" : "raw_metal",
+    "ingredients" : {},
+    "baseDemandInKg" : 2.0,
+    "productionPerWorkshop" : 4,
+    "basePrice" : 50.0
+  },{
+    "name" : "honey",
+    "ingredients" : {},
+    "baseDemandInKg" : 2.0,
+    "productionPerWorkshop" : 4,
+    "basePrice" : 50.0
+  },{
+    "name" : "salt",
+    "ingredients" : { "wood" : 0.25},
+    "baseDemandInKg" : 1.0,
+    "productionPerWorkshop" : 4,
+    "basePrice" : 58.0
+  },{
+    "name" : "metal_goods",
+    "ingredients" : {"wood" :  0.5, "raw_metal" :  1.0 },
+    "baseDemandInKg" : 1.5,
+    "productionPerWorkshop" : 2,
+    "basePrice" : 167.0
+  },{
+    "name" : "mead",
+    "ingredients" : { "honey" : 1},
+    "baseDemandInKg" : 2.0,
+    "productionPerWorkshop" : 2,
+    "basePrice" : 150.0
+  },{
+    "name" : "cloth",
+    "ingredients" : { "wool" : 1},
+    "baseDemandInKg" : 1.0,
+    "productionPerWorkshop" : 2,
+    "basePrice" : 150.0
+  },{
+    "name" : "beer",
+    "ingredients" : { "grain" :  0.25 },
+    "baseDemandInKg" : 3.0,
+    "productionPerWorkshop" : 3,
+    "basePrice" : 75.0
+  },{
+    "name" : "stockfish",
+    "ingredients" : { "salt" : 0.5,  "hemp" :  1},
+    "baseDemandInKg" : 3.0,
+    "productionPerWorkshop" : 3,
+    "basePrice" : 129.0
+  },{
+    "name" : "clothing",
+    "ingredients" : { "cloth" :  1 },
+    "baseDemandInKg" : 1.0,
+    "productionPerWorkshop" : 1,
+    "basePrice" : 350.0
+  },{
+    "name" : "cheese",
+    "ingredients" : {},
+    "baseDemandInKg" : 2.0,
+    "productionPerWorkshop" : 2,
+    "basePrice" : 100.0
+  },{
+    "name" : "pitch",
+    "ingredients" : { "wood" :  0.5 },
+    "baseDemandInKg" : 2.0,
+    "productionPerWorkshop" : 2,
+    "basePrice" : 117.0
+  },{
+    "name" : "pelts",
+    "ingredients" : { "hemp" :  0.5, "metal_goods" :  0.5 },
+    "baseDemandInKg" : 1.0,
+    "productionPerWorkshop" : 1,
+    "basePrice" : 300.0
+  },{
+    "name" : "meat",
+    "ingredients" : { "salt" :  1.5 },
+    "baseDemandInKg" : 1.0,
+    "productionPerWorkshop" : 1,
+    "basePrice" : 288.0
+  },{
+    "name" : "wine",
+    "ingredients" : {},
+    "baseDemandInKg" : 0.5,
+    "productionPerWorkshop" : 1,
+    "basePrice" : 400.0
+  },{
+    "name" : "spices",
+    "ingredients" : {},
+    "baseDemandInKg" : 0.5,
+    "productionPerWorkshop" : 0,
+    "basePrice" : 500.0
+  }
+]
+}
