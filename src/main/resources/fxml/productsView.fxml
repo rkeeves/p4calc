@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<TableView
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        editable="true"
+        fx:id="productModelsTable"
+        styleClass="product-models-table">
+    <columns>
+        <TableColumn fx:id="columnName" text="Name" />
+        <TableColumn fx:id="columnMarketDemandFulfillmentRatio" text="Fulfill" editable="true"/>
+        <TableColumn fx:id="columnBaseDemandInKg" text="Base demand [kg/pop]" editable="true"/>
+        <TableColumn fx:id="columnProductionPerWorkshop" text="Production [brl/workshop]" editable="true"/>
+        <TableColumn fx:id="columnBasePrice" text="Base Price [$]" editable="true"/>
+        <TableColumn fx:id="columnMarketDemand" text="Pop Demand [brl/day] (ceil)" />
+        <TableColumn fx:id="columnSumDemand" text="Sum Demand [brl/day] (ceil)" />
+        <TableColumn fx:id="columnWorkshopCount" text="Workshops [1]" />
+        <TableColumn fx:id="columnTradeRevenue" text="Trade Revenue [$/day]" />
+        <TableColumn fx:id="columnWorkerWage" text="Wage [$/day]" />
+        <TableColumn fx:id="columnPropertyTax" text="Property tax [$/day]" />
+        <TableColumn fx:id="columnWorkshopRunningCost" text="Running Cost [$/day]" />
+        <TableColumn fx:id="columnExpense" text="Expense [$/day]" />
+        <TableColumn fx:id="columnProfit" text="Profit [$/day]" />
+    </columns>
+</TableView>
