@@ -21,7 +21,7 @@ public class DefaultProductModel implements ProductModel {
 
     private final ProductBasicPropertiesModel basicPropertiesModel;
 
-    private final ProductDemandModel demandModel;
+    private final MutableProductDemandModel demandModel;
 
     private final ProductAssetModel assetModel;
 
@@ -84,7 +84,6 @@ public class DefaultProductModel implements ProductModel {
         return demandModel.getSumDemandProperty();
     }
 
-    @Override
     public void bindSumDemandExpression(NumberExpression sumDemand) {
         demandModel.bindSumDemandExpression(sumDemand);
     }
@@ -132,6 +131,11 @@ public class DefaultProductModel implements ProductModel {
     @Override
     public Map<ProductBasicPropertiesModel, DoubleProperty> getIngredients() {
         return ingredientsModel.getIngredients();
+    }
+
+    @Override
+    public Optional<DoubleProperty> getIngredientQuantity(ProductBasicPropertiesModel ingredient) {
+        return ingredientsModel.getIngredientQuantity(ingredient);
     }
 
     @Override
