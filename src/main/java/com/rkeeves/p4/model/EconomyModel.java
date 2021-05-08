@@ -1,6 +1,7 @@
 package com.rkeeves.p4.model;
 
-import java.util.List;
+import com.rkeeves.p4.javafx.ExpressionSquareMatrix;
+import javafx.collections.ObservableList;
 
 /**
  * This entity provides access to all data related to the economy.
@@ -14,10 +15,16 @@ public interface EconomyModel {
      */
     EconomyParametersModel getEconomyParametersModel();
 
+
+    int getProductCount();
     /**
      * Returns a list of all products' models.
      *
      * @return list of product models
      */
-    List<ProductModel> listProductModels();
+    ObservableList<ProductModel> listProductModels();
+
+    LowerTriangleMatrix getDependencyMatrixMutableLowerTriangle();
+
+    ExpressionSquareMatrix getDependencyMatrix();
 }
