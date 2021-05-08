@@ -2,8 +2,8 @@ package com.rkeeves.p4.model.impl;
 
 import com.rkeeves.p4.javafx.MathBindings;
 import com.rkeeves.p4.model.EconomyParametersModel;
+import com.rkeeves.p4.model.MutableProductDemandModel;
 import com.rkeeves.p4.model.ProductBasicPropertiesModel;
-import com.rkeeves.p4.model.ProductDemandModel;
 import javafx.beans.binding.NumberExpression;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class DefaultProductDemandModel implements ProductDemandModel {
+public class DefaultProductDemandModel implements MutableProductDemandModel {
 
     private final NumberExpression baseDemandProperty;
 
@@ -27,7 +27,7 @@ public class DefaultProductDemandModel implements ProductDemandModel {
         sumDemandProperty.bind(sumDemandExpression);
     }
 
-    public static ProductDemandModel create(EconomyParametersModel economyParametersModel,
+    public static MutableProductDemandModel create(EconomyParametersModel economyParametersModel,
                                             ProductBasicPropertiesModel productBasicPropertiesModel){
         var baseDemand =  MathBindings.divideDefaultsIfDivisorZero(productBasicPropertiesModel.getBaseDemandInKgProperty(),
                 economyParametersModel.getKgPerBarrelProperty(),
