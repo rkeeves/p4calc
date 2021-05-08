@@ -9,5 +9,7 @@ public interface ProductIngredientsModel {
 
     Map<ProductBasicPropertiesModel, DoubleProperty> getIngredients();
 
+    Optional<DoubleProperty> getIngredientQuantity(ProductBasicPropertiesModel ingredient);
+
     Optional<DoubleProperty> getIngredientQuantity(String ingredientName);
 }
