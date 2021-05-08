@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:id="rootNode"
+      maxHeight="-Infinity"
+      maxWidth="-Infinity"
+      minHeight="-Infinity"
+      minWidth="-Infinity"
+      prefHeight="400.0"
+      prefWidth="600.0">
+    <MenuBar>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem fx:id="menuItemNew" mnemonicParsing="false" text="New" />
+            <MenuItem fx:id="menuItemOpen" mnemonicParsing="false" text="Open"/>
+            <MenuItem fx:id="menuItemSaveAs" mnemonicParsing="false" text="Save As"/>
+            <MenuItem fx:id="menuItemQuit" mnemonicParsing="false" text="Quit"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Theme">
+            <MenuItem fx:id="menuItemThemeDefault" mnemonicParsing="false" text="Dark Theme" />
+            <MenuItem fx:id="menuItemThemeLight" mnemonicParsing="false" text="Light Theme"/>
+        </Menu>
+    </MenuBar>
+    <TabPane fx:id="tabPane" styleClass="root">
+        <Tab fx:id="tabParameters" text="Parameters" closable="false">
+        </Tab>
+        <Tab fx:id="tabIngredients" text="Ingredients (Lower Triangle)" closable="false">
+        </Tab>
+        <Tab fx:id="tabProducts" text="Products" closable="false">
+        </Tab>
+        <Tab fx:id="tabProfitsChart" text="Profits" closable="false">
+        </Tab>
+    </TabPane>
+</VBox>
