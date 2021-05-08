@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.SplitPane?>
+<SplitPane>
+    <BarChart
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="barChartFinance">
+        <xAxis>
+            <CategoryAxis side="BOTTOM" label="Product"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis side="LEFT" label="Amount [$/day]"/>
+        </yAxis>
+    </BarChart>
+</SplitPane>
+
