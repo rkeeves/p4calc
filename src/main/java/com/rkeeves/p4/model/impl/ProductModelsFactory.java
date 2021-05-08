@@ -1,5 +1,6 @@
 package com.rkeeves.p4.model.impl;
 
+import com.rkeeves.p4.javafx.Both;
 import com.rkeeves.p4.dto.ProductDTO;
 import com.rkeeves.p4.javafx.ExpressionVector;
 import com.rkeeves.p4.javafx.ExpressionVectorAdapter;
@@ -14,7 +15,7 @@ import static com.rkeeves.p4.javafx.ExpressionSquareMatrices.multiplyMatrixWithV
 
 public class ProductModelsFactory {
 
-    public List<ProductModel> create(EconomyParametersModel constants, List<ProductDTO> productDTOs){
+    public Both<DependencyMatrix,List<ProductModel>> create(EconomyParametersModel constants, List<ProductDTO> productDTOs){
         var productModels = createProductModels(constants, productDTOs);
         var marketDemandsVector = createMarketDemandVector(productModels);
         var ingredientsLowerTriangleMatrix = createIngredientsLowerTriangleMatrix(productDTOs);
@@ -23,7 +24,7 @@ public class ProductModelsFactory {
         var sumDemands = multiplyMatrixWithVector(demandMatrix, marketDemandsVector);
         bindSumDemandsToProductModels(productModels, sumDemands);
         populateIngredientMaps(productModels, dependencyMatrix);
-        return mapToProductModels(productModels);
+        return Both.of(dependencyMatrix, mapToProductModels(productModels));
     }
 
     private double[][] createIngredientsLowerTriangleMatrix(List<ProductDTO> productDTOs) {
