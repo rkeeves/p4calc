@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          styleClass="parameters-grid">
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Kilograms per barrel[kg/brl]</Label>
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1">[kg/brl]</Label>
+    <TextField GridPane.rowIndex="0"  GridPane.columnIndex="2" fx:id="textFieldKgPerBarrel" ></TextField>
+
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Global market demand multiplier</Label>
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="1">[-]</Label>
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="2" fx:id="textFieldGlobalMarketDemandMultiplier"/>
+
+    <Label GridPane.rowIndex="2" GridPane.columnIndex="0">Consumer count</Label>
+    <Label GridPane.rowIndex="2" GridPane.columnIndex="1">[pop]</Label>
+    <TextField GridPane.rowIndex="2" GridPane.columnIndex="2" fx:id="textFieldConsumerCount"></TextField>
+
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="0">Global sell price multiplier</Label>
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="1">[-]</Label>
+    <TextField GridPane.rowIndex="3" GridPane.columnIndex="2" fx:id="textFieldGlobalSellPriceMultiplier"></TextField>
+
+    <Label GridPane.rowIndex="4" GridPane.columnIndex="0">Workers per workshop</Label>
+    <Label GridPane.rowIndex="4" GridPane.columnIndex="1">[pop/shop]</Label>
+    <TextField GridPane.rowIndex="4" GridPane.columnIndex="2" fx:id="textFieldWorkersPerWorkshop"></TextField>
+
+    <Label GridPane.rowIndex="5" GridPane.columnIndex="0">Daily wage per worker</Label>
+    <Label GridPane.rowIndex="5" GridPane.columnIndex="1">[$/pop/day]</Label>
+    <TextField GridPane.rowIndex="5" GridPane.columnIndex="2" fx:id="textFieldWagePerWorker"></TextField>
+
+    <Label GridPane.rowIndex="6" GridPane.columnIndex="0">Property tax</Label>
+    <Label GridPane.rowIndex="6" GridPane.columnIndex="1">[$/day]</Label>
+    <TextField GridPane.rowIndex="6" GridPane.columnIndex="2" fx:id="textFieldFixedPropertyTax"></TextField>
+
+    <Label GridPane.rowIndex="7" GridPane.columnIndex="0">Fixed running cost</Label>
+    <Label GridPane.rowIndex="7" GridPane.columnIndex="1">[$/day]</Label>
+    <TextField GridPane.rowIndex="7" GridPane.columnIndex="2" fx:id="textFieldFixedRunningCost"></TextField>
+</GridPane>
