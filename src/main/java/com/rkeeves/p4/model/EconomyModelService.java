@@ -13,5 +13,5 @@ public interface EconomyModelService {
      * @param dto - the Data Transfer Object representing the economy
      * @return model of the economy
      */
-    EconomyModel create(EconomyDTO dto);
+    EconomyModel create(EconomyDTO dto) throws DTOInvalidException;
 }
