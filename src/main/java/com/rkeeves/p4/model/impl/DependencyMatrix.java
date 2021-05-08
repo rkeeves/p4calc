@@ -2,11 +2,12 @@ package com.rkeeves.p4.model.impl;
 
 import com.rkeeves.p4.javafx.ExpressionSquareMatrices;
 import com.rkeeves.p4.javafx.ExpressionSquareMatrix;
+import com.rkeeves.p4.model.LowerTriangleMatrix;
 import javafx.beans.binding.DoubleBinding;
 import javafx.beans.binding.NumberExpression;
 import javafx.beans.property.DoubleProperty;
 
-public class DependencyMatrix implements ExpressionSquareMatrix {
+public class DependencyMatrix implements ExpressionSquareMatrix, LowerTriangleMatrix {
 
     private final DoubleProperty[][] squareMatrix;
 
