@@ -1,0 +1,28 @@
+.root {
+    -fx-font-family: "Roboto";
+    -fx-base: #e0e0e0;
+    -fx-accent: #435e92;
+    -fx-default-button: #e0e0e0;
+    -fx-focus-color: #585757;
+    -fx-faint-focus-color: rgb(136, 136, 136);
+    -fx-focused-text-base-color : ladder(
+            -fx-selection-bar,
+            -fx-light-text-color 45%,
+            -fx-dark-text-color 46%,
+            -fx-dark-text-color 59%,
+            -fx-mid-text-color 60%
+    );
+    -fx-focused-mark-color : -fx-focused-text-base-color ;
+    -fx-control-inner-background: derive(-fx-base, 35%);
+    -fx-control-inner-background-alt: -fx-control-inner-background;
+}
+
+.text-input:focused {
+    -fx-highlight-text-fill: ladder(
+            -fx-highlight-fill,
+            -fx-light-text-color 45%,
+            -fx-dark-text-color  46%,
+            -fx-dark-text-color  59%,
+            -fx-mid-text-color   60%
+    );
+}

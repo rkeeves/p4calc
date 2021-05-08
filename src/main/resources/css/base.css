@@ -1,0 +1,78 @@
+.root {
+    -fx-font-family: "Roboto";
+    -fx-base: #3c3f41;
+    -fx-accent: #435e92;
+    -fx-default-button: #3c3f41;
+    -fx-focus-color: #545454;
+    -fx-faint-focus-color: #404040;
+    -fx-focused-text-base-color : ladder(
+            -fx-selection-bar,
+            -fx-light-text-color 45%,
+            -fx-dark-text-color 46%,
+            -fx-dark-text-color 59%,
+            -fx-mid-text-color 60%
+    );
+    -fx-focused-mark-color : -fx-focused-text-base-color ;
+    -fx-control-inner-background: derive(-fx-base, 35%);
+    -fx-control-inner-background-alt: -fx-control-inner-background;
+}
+
+.dialog-pane {
+    -fx-border-width: 1;
+    -fx-border-color: -fx-default-button;
+}
+
+.text-input:focused {
+    -fx-highlight-text-fill: ladder(
+            -fx-highlight-fill,
+            -fx-light-text-color 45%,
+            -fx-dark-text-color  46%,
+            -fx-dark-text-color  59%,
+            -fx-mid-text-color   60%
+    );
+    -fx-border-width: 1;
+    -fx-background-insets: 0, 1;
+}
+
+.text-field {
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-width: 1;
+    -fx-background-insets: 0, 1;
+}
+
+.parameters-grid {
+    -fx-padding: 5;
+}
+
+.ingredient-matrix {
+    -fx-padding: 5;
+}
+
+.ingredient-matrix > .ingredient-label {
+    -fx-font-weight: bold;
+}
+
+.parameters-grid {
+    -fx-hgap: 10;
+    -fx-vgap: 5;
+    -fx-padding: 20;
+    -fx-label-padding: 10;
+}
+
+.parameters-grid > .label {
+    -fx-font-weight: bold;
+}
+
+.text-field-table-cell{
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:expanded{
+    -fx-background-color: red;
+}
+
+.button {
+    -fx-border-width: 1;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+}
