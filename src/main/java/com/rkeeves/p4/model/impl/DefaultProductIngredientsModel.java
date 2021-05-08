@@ -26,6 +26,11 @@ public class DefaultProductIngredientsModel implements ProductIngredientsModel {
     }
 
     @Override
+    public Optional<DoubleProperty> getIngredientQuantity(ProductBasicPropertiesModel ingredient) {
+        return Optional.ofNullable(ingredients.get(ingredient));
+    }
+
+    @Override
     public Optional<DoubleProperty> getIngredientQuantity(String ingredientName) {
         for (var ingredientAndQuantityPair: ingredients.entrySet()) {
             if(ingredientAndQuantityPair.getKey().getNameProperty().get().equals(ingredientName)){
