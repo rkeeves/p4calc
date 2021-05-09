@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class DependencyMatrixTest {
+class TestDependencyMatrix {
 
     @Test
     void dependencyMatrix_WhenGivenDependency_CreatesValidMatrix(){
