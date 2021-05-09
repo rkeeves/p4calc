@@ -20,7 +20,7 @@ class DefaultEconomyModel implements EconomyModel {
 
     @Getter(AccessLevel.PRIVATE)
     private final ObservableList<ProductModel> productModels;
-    
+
     @Override
     public ObservableList<ProductModel> listProductModels() {
         return productModels;
