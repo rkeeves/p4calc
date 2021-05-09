@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class DefaultProductBasicPropertiesModel implements ProductBasicPropertiesModel{
+class DefaultProductBasicPropertiesModel implements ProductBasicPropertiesModel{
 
     private final StringProperty nameProperty;
 
@@ -23,7 +23,7 @@ public class DefaultProductBasicPropertiesModel implements ProductBasicPropertie
 
     private final DoubleProperty basePriceProperty;
 
-    public static ProductBasicPropertiesModel create(ProductDTO dto){
+    static ProductBasicPropertiesModel create(ProductDTO dto){
         return DefaultProductBasicPropertiesModel.builder()
                 .nameProperty(new SimpleStringProperty(dto.getName()))
                 .marketDemandFulfillmentRatioProperty(new SimpleIntegerProperty(dto.getMarketDemandFulfillmentRatio()))
