@@ -19,7 +19,7 @@ public interface FXMLService {
      * @param <A> - controller's actual type
      * @param <T> - the view's root node's actual type
      * @return the view's root
-     * @throws FXMLLoadFailedException - If any loading errors occured
+     * @throws FXMLLoadFailedException
      */
     <A, T extends Node> T load(A controller, String fxmlResourcePath) throws FXMLLoadFailedException;
 }
