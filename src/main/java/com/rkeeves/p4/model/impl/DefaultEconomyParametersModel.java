@@ -15,7 +15,7 @@ import static com.rkeeves.p4.javafx.Properties.intProp;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class DefaultEconomyParametersModel implements EconomyParametersModel {
+class DefaultEconomyParametersModel implements EconomyParametersModel {
 
     private final DoubleProperty kgPerBarrelProperty;
 
