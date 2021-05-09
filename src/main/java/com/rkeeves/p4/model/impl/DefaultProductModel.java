@@ -17,7 +17,7 @@ import java.util.Optional;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class DefaultProductModel implements ProductModel {
+class DefaultProductModel implements ProductModel {
 
     private final ProductBasicPropertiesModel basicPropertiesModel;
 
@@ -29,7 +29,7 @@ public class DefaultProductModel implements ProductModel {
 
     private final ProductIngredientsModel ingredientsModel;
 
-    public static DefaultProductModel create(EconomyParametersModel economyParametersModel, ProductDTO dto){
+    static DefaultProductModel create(EconomyParametersModel economyParametersModel, ProductDTO dto){
         var basicPropertiesModel = DefaultProductBasicPropertiesModel.create(dto);
         var demandModel = DefaultProductDemandModel.create(economyParametersModel, basicPropertiesModel);
         var assetModel = DefaultProductAssetModel.create(economyParametersModel, basicPropertiesModel, demandModel);
