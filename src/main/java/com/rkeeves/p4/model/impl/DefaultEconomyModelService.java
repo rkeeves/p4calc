@@ -5,7 +5,7 @@ import com.rkeeves.p4.model.EconomyModel;
 import com.rkeeves.p4.model.EconomyModelService;
 
 /**
- * Default implementation of EconomyModel service
+ * Default implementation of EconomyModel service.
  */
 public class DefaultEconomyModelService implements EconomyModelService {
 
