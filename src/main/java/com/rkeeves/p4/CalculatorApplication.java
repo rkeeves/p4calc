@@ -28,6 +28,10 @@ public class CalculatorApplication extends Application {
 
     private FileChooserController fileChooserController;
 
+    /**
+     * This method gets called after an CalculatorApplication instance is constructed.
+     * This serves as a way to setup dependencies.
+     */
     @Override
     public void init() {
         jsonService = new JacksonJSONService();
@@ -61,6 +65,12 @@ public class CalculatorApplication extends Application {
         }
     }
 
+    /**
+     * Called after Platform exit was called explicitly or all managed windows were closed.
+     * This method was overridden only to facilitate logging.
+     *
+     * @throws Exception
+     */
     @Override
     public void stop() throws Exception {
         Logger.debug("Application stopping");
