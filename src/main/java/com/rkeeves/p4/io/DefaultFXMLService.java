@@ -16,10 +16,10 @@ public class DefaultFXMLService implements FXMLService {
      * but just simply uses the user supplied controller.
      * If you use nested controllers, this method will behave in an undefined way.
      *
-     * @param controller - the controller instance
-     * @param fxmlResourcePath - fxml file's resource name string
-     * @param <A> - controller's actual type
-     * @param <T> - the view's root node's actual type
+     * @param controller the controller instance
+     * @param fxmlResourcePath fxml file's resource name string
+     * @param <A> controller's actual type
+     * @param <T> the view's root node's actual type
      * @return the view's root
      * @throws FXMLLoadFailedException
      */

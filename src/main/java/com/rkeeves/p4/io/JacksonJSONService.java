@@ -19,9 +19,9 @@ public class JacksonJSONService implements JSONService{
      * This method reads a resource file - given by the user supplied resource name -
      * and returns an object of the user given type populated with data based on the JSON file.
      *
-     * @param resourceName - the name of the resource to process
-     * @param cls - class object of the constructible object's type
-     * @param <T> - the constructible object's type
+     * @param resourceName the name of the resource to process
+     * @param cls class object of the constructible object's type
+     * @param <T> the constructible object's type
      * @return the constructed and populated object
      * @throws JSONReadFailedException
      */
@@ -34,9 +34,9 @@ public class JacksonJSONService implements JSONService{
      * This method reads a file - given by the user supplied file object -
      * and returns an object of the user given type populated with data based on the JSON file.
      *
-     * @param file - the file to process
-     * @param cls - class object of the constructible object's type
-     * @param <T> - the constructible object's type
+     * @param file the file to process
+     * @param cls class object of the constructible object's type
+     * @param <T> the constructible object's type
      * @return the constructed and populated object
      * @throws JSONReadFailedException
      */
@@ -70,9 +70,9 @@ public class JacksonJSONService implements JSONService{
     /**
      * Writes to a user given file JSON formatted data, based on the object given by the user.
      *
-     * @param file - the file to write
-     * @param object - the object to write
-     * @param <T> - the object's type
+     * @param file the file to write
+     * @param object the object to write
+     * @param <T> the object's type
      * @throws JSONWriteFailedException
      */
     @Override
