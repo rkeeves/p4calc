@@ -3,8 +3,7 @@ package com.rkeeves.p4.io;
 import javafx.scene.Node;
 
 /**
- * This service provides a generic way for loading fxml based views
- * with user supplied controllers
+ * This service provides a generic way for loading fxml based views with user supplied controllers.
  */
 public interface FXMLService {
 
