@@ -18,7 +18,7 @@ public interface FXMLService {
      * @param fxmlResourcePath - fxml file's resource name string
      * @param <A> - controller's actual type
      * @param <T> - the view's root node's actual type
-     * @return
+     * @return the view's root
      * @throws FXMLLoadFailedException - If any loading errors occured
      */
     <A, T extends Node> T load(A controller, String fxmlResourcePath) throws FXMLLoadFailedException;
