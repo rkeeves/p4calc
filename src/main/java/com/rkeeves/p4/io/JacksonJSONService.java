@@ -31,7 +31,7 @@ public class JacksonJSONService implements JSONService{
         }
     }
 
-    public <T> T readFromInputStream(String resourceName, InputStream inputStream, Class<T> cls) throws JSONReadFailedException {
+    private <T> T readFromInputStream(String resourceName, InputStream inputStream, Class<T> cls) throws JSONReadFailedException {
         try {
             return objectMapper.readValue(inputStream, cls);
         } catch (JsonParseException e) {
