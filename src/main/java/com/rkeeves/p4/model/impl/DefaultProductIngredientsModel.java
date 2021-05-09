@@ -15,7 +15,7 @@ import java.util.Optional;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class DefaultProductIngredientsModel implements ProductIngredientsModel {
+class DefaultProductIngredientsModel implements ProductIngredientsModel {
 
     private final Map<ProductBasicPropertiesModel, DoubleProperty> ingredients;
 
