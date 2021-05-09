@@ -2,6 +2,10 @@ package com.rkeeves.p4.model;
 
 import javafx.beans.binding.NumberExpression;
 
+/**
+ * This interface is used internally to solve post-constructor field setting.
+ * Regular users will not use this, nor will they encounter it.
+ */
 public interface MutableProductDemandModel extends ProductDemandModel{
 
     /**
