@@ -12,6 +12,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.tinylog.Logger;
 
+/**
+ * This entity is the JavaFX GUI Application itself.
+ */
 public class CalculatorApplication extends Application {
 
     private JSONService jsonService;
