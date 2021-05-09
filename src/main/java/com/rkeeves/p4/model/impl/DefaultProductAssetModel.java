@@ -14,13 +14,13 @@ import lombok.RequiredArgsConstructor;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class DefaultProductAssetModel implements ProductAssetModel {
+class DefaultProductAssetModel implements ProductAssetModel {
 
     private final NumberExpression workshopCountProperty;
 
     private final NumberExpression requiredWorkerCountProperty;
 
-    public static DefaultProductAssetModel create(EconomyParametersModel economyParametersModel,
+    static DefaultProductAssetModel create(EconomyParametersModel economyParametersModel,
                                                   ProductBasicPropertiesModel productBasicPropertiesModel,
                                                   ProductDemandModel productDemandModel){
         var workshopCountRational = MathBindings.divideDefaultsIfDivisorZero(productDemandModel.getSumDemandProperty(),
