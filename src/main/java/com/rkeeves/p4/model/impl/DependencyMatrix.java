@@ -7,11 +7,11 @@ import javafx.beans.binding.DoubleBinding;
 import javafx.beans.binding.NumberExpression;
 import javafx.beans.property.DoubleProperty;
 
-public class DependencyMatrix implements ExpressionSquareMatrix, LowerTriangleMatrix {
+class DependencyMatrix implements ExpressionSquareMatrix, LowerTriangleMatrix {
 
     private final DoubleProperty[][] squareMatrix;
 
-    public static DependencyMatrix createByLowerTriangleValues(double[][] valueMatrix){
+    static DependencyMatrix createByLowerTriangleValues(double[][] valueMatrix){
         var dependencyMatrix = DependencyMatrix.create(valueMatrix.length);
         for (int i = 1; i < valueMatrix.length; i++) {
             for (int j = 0; j < i; j++) {
@@ -21,7 +21,7 @@ public class DependencyMatrix implements ExpressionSquareMatrix, LowerTriangleMa
         return dependencyMatrix;
     }
 
-    public static DependencyMatrix create(int productCount){
+    static DependencyMatrix create(int productCount){
         return new DependencyMatrix(ExpressionSquareMatrices.doublePropertySquareMatrix(productCount));
     }
 
@@ -55,13 +55,14 @@ public class DependencyMatrix implements ExpressionSquareMatrix, LowerTriangleMa
         return squareMatrix[row][col];
     }
 
+    @Override
     public DoubleProperty getElementOfLowerTriangle(int row, int col) {
         if(row <= col)
             throw new IndexOutOfBoundsException("Tried to access element outside of lower triangle");
         return squareMatrix[row][col];
     }
 
-    public double[][] toArray(){
+    double[][] toArray(){
         return ExpressionSquareMatrices.toArray(this);
     }
 
