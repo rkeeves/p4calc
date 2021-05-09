@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class DefaultProductFinancialModel implements ProductFinancialModel {
+class DefaultProductFinancialModel implements ProductFinancialModel {
 
     private final NumberExpression tradeRevenueProperty;
 
@@ -25,7 +25,7 @@ public class DefaultProductFinancialModel implements ProductFinancialModel {
 
     private final NumberExpression profitProperty;
 
-    public static DefaultProductFinancialModel create(EconomyParametersModel economyParametersModel,
+    static DefaultProductFinancialModel create(EconomyParametersModel economyParametersModel,
                                                       ProductBasicPropertiesModel productBasicPropertiesModel,
                                                       ProductDemandModel productDemandModel,
                                                       ProductAssetModel productAssetModel){
