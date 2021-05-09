@@ -13,7 +13,7 @@ import lombok.*;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class DefaultEconomyModel implements EconomyModel {
+class DefaultEconomyModel implements EconomyModel {
 
     private final EconomyParametersModel economyParametersModel;
 
@@ -42,7 +42,7 @@ public class DefaultEconomyModel implements EconomyModel {
         return dependencyMatrix;
     }
 
-    public static DefaultEconomyModel create(EconomyDTO dto){
+    static DefaultEconomyModel create(EconomyDTO dto){
         var economyConstantsModel = DefaultEconomyParametersModel.create(dto.getEconomyParameters());
         var result = new ProductModelsFactory().create(economyConstantsModel, dto.getProducts());
         var dependencyMatrix = result.getSome();
