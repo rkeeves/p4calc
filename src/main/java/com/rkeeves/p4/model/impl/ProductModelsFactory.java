@@ -13,9 +13,9 @@ import java.util.stream.Collectors;
 
 import static com.rkeeves.p4.javafx.ExpressionSquareMatrices.multiplyMatrixWithVector;
 
-public class ProductModelsFactory {
+class ProductModelsFactory {
 
-    public Both<DependencyMatrix,List<ProductModel>> create(EconomyParametersModel constants, List<ProductDTO> productDTOs){
+    Both<DependencyMatrix,List<ProductModel>> create(EconomyParametersModel constants, List<ProductDTO> productDTOs){
         var productModels = createProductModels(constants, productDTOs);
         var marketDemandsVector = createMarketDemandVector(productModels);
         var ingredientsLowerTriangleMatrix = createIngredientsLowerTriangleMatrix(productDTOs);
