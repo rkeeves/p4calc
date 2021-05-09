@@ -1,7 +1,6 @@
 package com.rkeeves.p4.model.impl;
 
 import com.rkeeves.p4.dto.EconomyDTO;
-import com.rkeeves.p4.javafx.ExpressionSquareMatrix;
 import com.rkeeves.p4.model.EconomyModel;
 import com.rkeeves.p4.model.EconomyParametersModel;
 import com.rkeeves.p4.model.LowerTriangleMatrix;
@@ -21,12 +20,7 @@ class DefaultEconomyModel implements EconomyModel {
 
     @Getter(AccessLevel.PRIVATE)
     private final ObservableList<ProductModel> productModels;
-
-    @Override
-    public int getProductCount() {
-        return productModels.size();
-    }
-
+    
     @Override
     public ObservableList<ProductModel> listProductModels() {
         return productModels;
@@ -34,11 +28,6 @@ class DefaultEconomyModel implements EconomyModel {
 
     @Override
     public LowerTriangleMatrix getDependencyMatrixMutableLowerTriangle() {
-        return dependencyMatrix;
-    }
-
-    @Override
-    public ExpressionSquareMatrix getDependencyMatrix() {
         return dependencyMatrix;
     }
 
