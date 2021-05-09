@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class DefaultProductDemandModel implements MutableProductDemandModel {
+class DefaultProductDemandModel implements MutableProductDemandModel {
 
     private final NumberExpression baseDemandProperty;
 
@@ -27,7 +27,7 @@ public class DefaultProductDemandModel implements MutableProductDemandModel {
         sumDemandProperty.bind(sumDemandExpression);
     }
 
-    public static MutableProductDemandModel create(EconomyParametersModel economyParametersModel,
+    static MutableProductDemandModel create(EconomyParametersModel economyParametersModel,
                                             ProductBasicPropertiesModel productBasicPropertiesModel){
         var baseDemand =  MathBindings.divideDefaultsIfDivisorZero(productBasicPropertiesModel.getBaseDemandInKgProperty(),
                 economyParametersModel.getKgPerBarrelProperty(),
