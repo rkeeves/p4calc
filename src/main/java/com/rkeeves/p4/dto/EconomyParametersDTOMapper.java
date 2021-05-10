@@ -2,6 +2,9 @@ package com.rkeeves.p4.dto;
 
 import com.rkeeves.p4.model.EconomyParametersModel;
 
+/**
+ * This entity is the default implementation of an economy parameters model to dto mapper.
+ */
 public class EconomyParametersDTOMapper implements DTOMapper<EconomyParametersModel, EconomyParametersDTO> {
 
     @Override
