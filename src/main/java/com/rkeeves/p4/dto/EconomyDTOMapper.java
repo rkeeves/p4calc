@@ -5,6 +5,9 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.stream.Collectors;
 
+/**
+ * This entity is the default implementation of an economy model to dto mapper.
+ */
 @RequiredArgsConstructor
 public class EconomyDTOMapper implements DTOMapper<EconomyModel, EconomyDTO> {
 
