@@ -3,6 +3,9 @@ package com.rkeeves.p4.javafx;
 import javafx.beans.binding.NumberExpression;
 import lombok.Data;
 
+/**
+ * An array based implementation of an expression vector.
+ */
 @Data
 public class ArrayExpressionVector implements MutableExpressionVector{
 
