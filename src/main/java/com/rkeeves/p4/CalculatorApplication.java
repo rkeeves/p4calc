@@ -47,6 +47,11 @@ public class CalculatorApplication extends Application {
         Logger.debug("Application initialized");
     }
 
+    /**
+     * This method gets called by JavaFX when the primary stage is ready.
+     *
+     * @param stage primary stage
+     */
     @Override
     public void start(Stage stage) {
         try {
