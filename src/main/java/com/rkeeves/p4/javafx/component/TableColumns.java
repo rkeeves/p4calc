@@ -10,11 +10,25 @@ import javafx.util.StringConverter;
 
 import java.util.function.Function;
 
+/**
+ * A static helper class to modify JavaFX table columns to facilitate binding to properties.
+ */
 public class TableColumns {
 
     private static final StringConverter<Number> nullableIntConverter = NullableStringConverter.convertToNumber(NullableStringConverter.forInteger());
 
     private static final StringConverter<Number> nullableDoubleConverter = NullableStringConverter.convertToNumber(NullableStringConverter.forDouble());
+
+    /**
+     * Sets up a table column to automatically populate itself with read only cells,
+     * if the table is given objects of type O.
+     * The column can be set up for all instance fields which are properties.
+     *
+     * @param column the modifiable column
+     * @param getter the field's getter
+     * @param <O> the instance's type
+     * @param <T> the instance field's type
+     */
 
     public static <O, T> void readonlyColumnForProperty(TableColumn<O, T> column, Function<O, Property<T>> getter) {
         javafx.util.Callback<TableColumn.CellDataFeatures<O, T>,
@@ -22,17 +36,43 @@ public class TableColumns {
         column.setCellValueFactory(factory);
     }
 
-
+    /**
+     * Sets up a table column to automatically populate itself with read only cells,
+     * if the table is given objects of type O.
+     * The column can be set up for all instance fields which are number expressions.
+     *
+     * @param column the modifiable column
+     * @param getter the field's getter
+     * @param <O> the instance's type
+     */
     public static <O> void readonlyColumnForNumberExpr(TableColumn<O, Number> column, Function<O, NumberExpression> getter) {
         javafx.util.Callback<TableColumn.CellDataFeatures<O, Number>,
                 javafx.beans.value.ObservableValue<Number>> factory = cellData -> getter.apply(cellData.getValue());
         column.setCellValueFactory(factory);
     }
 
+    /**
+     * Sets up a table column to automatically populate itself with editable text fields,
+     * if the table is given objects of type O.
+     * The column can be set up for all instance fields which are of type DoubleProperty.
+     *
+     * @param column the modifiable column
+     * @param getter a getter for a DoubleProperty type field of the object
+     * @param <O> the instance's type
+     */
     public static <O> void editableColumnForDouble(TableColumn<O, Number> column, Function<O, DoubleProperty> getter) {
         columnForNumber(column, getter.andThen(e -> e), nullableDoubleConverter);
     }
 
+    /**
+     * Sets up a table column to automatically populate itself with editable text fields,
+     * if the table is given objects of type O.
+     * The column can be set up for all instance fields which are of type IntegerProperty.
+     *
+     * @param column the modifiable column
+     * @param getter a getter for an IntegerProperty type field of the object
+     * @param <O> the instance's type
+     */
     public static <O> void editableColumnForInteger(TableColumn<O, Number> column,
                                                     Function<O, IntegerProperty> getter) {
         columnForNumber(column, getter.andThen(e -> e), nullableIntConverter);

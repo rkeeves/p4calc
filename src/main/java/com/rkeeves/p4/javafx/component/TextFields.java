@@ -10,6 +10,9 @@ import javafx.util.converter.IntegerStringConverter;
 
 import java.util.function.UnaryOperator;
 
+/**
+ * A static helper class to modify JavaFX text fields to facilitate binding to properties.
+ */
 public class TextFields {
 
     private TextFields(){
@@ -36,11 +39,23 @@ public class TextFields {
 
     private static final StringConverter<? extends Number> doubleConverter = new DoubleStringConverter();
 
+    /**
+     * Binds an integer property bidirectionally to a text field.
+     *
+     * @param textField whose string property is about to be bound to
+     * @param integerProperty the property to base the binding on
+     */
     public static void bindBidirectional(TextField textField, IntegerProperty integerProperty){
         textField.setTextFormatter(new TextFormatter<>(intFilter));
         textField.textProperty().bindBidirectional(integerProperty,(StringConverter<Number>) intConverter);
     }
 
+    /**
+     * Binds a double property bidirectionally to a text field.
+     *
+     * @param textField whose string property is about to be bound to
+     * @param doubleProperty the property to base the binding on
+     */
     public static void bindBidirectional(TextField textField, DoubleProperty doubleProperty){
         textField.setTextFormatter(new TextFormatter<>(doubleFilter));
         textField.textProperty().bindBidirectional(doubleProperty,(StringConverter<Number>) doubleConverter);

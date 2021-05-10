@@ -11,6 +11,11 @@ public class ExpressionVectorAdapter<T extends NumberExpression> implements Expr
 
     private final T[] array;
 
+    /**
+     * Constructs a read-only expression vector adapter based on the given array.
+     *
+     * @param array user given array
+     */
     public ExpressionVectorAdapter(T[] array){
         this.array = array;
     }

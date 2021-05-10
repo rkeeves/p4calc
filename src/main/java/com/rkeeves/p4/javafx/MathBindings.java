@@ -31,8 +31,8 @@ public class MathBindings {
 
     /**
      * A simple binding fot java.lang.Math.ceil.
-     * @param value
-     * @return
+     * @param value expression to ceil
+     * @return binding
      */
     public static NumberBinding ceil(NumberExpression value){
         return Bindings.createDoubleBinding(() -> Math.ceil(value.doubleValue()), value);
@@ -40,8 +40,8 @@ public class MathBindings {
 
     /**
      * A simple binding fot java.lang.Math.floor.
-     * @param value
-     * @return
+     * @param value expression to floor
+     * @return binding
      */
     public static NumberBinding floor(NumberExpression value){
         return Bindings.createDoubleBinding(() -> Math.floor(value.doubleValue()), value);
