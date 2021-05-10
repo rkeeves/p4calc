@@ -4,6 +4,10 @@ import com.rkeeves.p4.model.ProductModel;
 
 import java.util.HashMap;
 
+
+/**
+ * This entity is the default implementation of an product model to dto mapper.
+ */
 public class ProductDTOMapper implements DTOMapper<ProductModel, ProductDTO> {
 
     @Override
