@@ -1,12 +1,12 @@
 package com.rkeeves.p4.controller;
 
-import com.rkeeves.p4.javafx.Both;
 import com.rkeeves.p4.model.EconomyModel;
 import com.rkeeves.p4.model.ProductModel;
 import javafx.beans.binding.NumberExpression;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
+import javafx.util.Pair;
 
 import java.util.function.Function;
 
@@ -37,11 +37,11 @@ public class FinanceChartController implements Wireable<EconomyModel>{
         var dataList = series.getData();
         model.listProductModels()
                 .stream()
-                .map(product-> Both.of(product.getNameProperty(), propertyGetter.apply(product)))
+                .map(product-> new Pair<>(product.getNameProperty(), propertyGetter.apply(product)))
                 .map(both->{
                     var data = new XYChart.Data<String,Number>();
-                    data.XValueProperty().bind(both.getSome());
-                    data.YValueProperty().bind(both.getOther());
+                    data.XValueProperty().bind(both.getKey());
+                    data.YValueProperty().bind(both.getValue());
                     return data;
                 })
                 .forEachOrdered(dataList::add);
