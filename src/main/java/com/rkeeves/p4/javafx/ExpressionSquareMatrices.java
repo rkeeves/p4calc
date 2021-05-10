@@ -8,12 +8,21 @@ import javafx.beans.property.SimpleDoubleProperty;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * A static helper class for methods dealing with expression square matrices.
+ */
 public class ExpressionSquareMatrices {
 
     private ExpressionSquareMatrices(){
 
     }
 
+    /**
+     * Returns a fully populated matrix of "size" rows and "size" columns.
+     *
+     * @param size the amount of rows and colummns in the square matrix
+     * @return square matrix
+     */
     public static DoubleProperty[][] doublePropertySquareMatrix(int size){
         DoubleProperty[][] matrix = new DoubleProperty[size][];
         for (int i = 0; i < size; i++) {
@@ -25,6 +34,13 @@ public class ExpressionSquareMatrices {
         return matrix;
     }
 
+    /**
+     * Returns the result of a matrix vector multiplication as an expression vector.
+     *
+     * @param symmetricMatrix matrix to multiply with
+     * @param vector vector to multiply
+     * @return the product vector
+     */
     public static ExpressionVector multiplyMatrixWithVector(ExpressionSquareMatrix symmetricMatrix,
                                                             ExpressionVector vector){
         if(vector.size() != symmetricMatrix.size())
@@ -40,6 +56,13 @@ public class ExpressionSquareMatrices {
         return new ArrayExpressionVector(resultVector);
     }
 
+    /**
+     * Returns a primitive double matrix whose elements are the
+     * current values of the symmetric matrix.
+     *
+     * @param symmetricMatrix the symmetric matrix to be transformed
+     * @return primitive double matrix representation of the matrix's current state
+     */
     public static double[][] toArray(ExpressionSquareMatrix symmetricMatrix){
         int size = symmetricMatrix.size();
         var primitiveMatrix = new double[size][];
@@ -52,6 +75,12 @@ public class ExpressionSquareMatrices {
         return primitiveMatrix;
     }
 
+    /**
+     * Returns a string representation of the current values of the symmetric matrix.
+     *
+     * @param symmetricMatrix the symmetric matrix to be transformed
+     * @return string representation of the matrix's current state
+     */
     public static String toString(ExpressionSquareMatrix symmetricMatrix){
         return "[" + IntStream.range(0,symmetricMatrix.size())
                 .mapToObj(row-> "[" + IntStream.range(0,symmetricMatrix.size())
