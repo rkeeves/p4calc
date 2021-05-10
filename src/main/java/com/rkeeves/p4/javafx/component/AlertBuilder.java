@@ -30,7 +30,7 @@ public class AlertBuilder {
     }
 
     /**
-     * Returns a builder instance
+     * Returns a builder instance.
      *
      * @return builder
      */
@@ -39,7 +39,7 @@ public class AlertBuilder {
     }
 
     /**
-     * Sets the alertType for the builder
+     * Sets the alertType for the builder.
      *
      * @param alertType alert type
      * @return builder
@@ -50,7 +50,7 @@ public class AlertBuilder {
     }
 
     /**
-     * Sets the title for the builder
+     * Sets the title for the builder.
      *
      * @param title title text
      * @return builder
@@ -61,7 +61,7 @@ public class AlertBuilder {
     }
 
     /**
-     * Sets the header text for the builder
+     * Sets the header text for the builder.
      *
      * @param headerText header text
      * @return builder
@@ -72,7 +72,7 @@ public class AlertBuilder {
     }
 
     /**
-     * Sets the content text for the builder
+     * Sets the content text for the builder.
      *
      * @param content text content
      * @return builder
@@ -83,7 +83,7 @@ public class AlertBuilder {
     }
 
     /**
-     * Sets the button types for the builder
+     * Sets the button types for the builder.
      *
      * @param buttonTypes button types
      * @return builder
@@ -94,7 +94,7 @@ public class AlertBuilder {
     }
 
     /**
-     * Sets the style sheets for the builder
+     * Sets the style sheets for the builder.
      *
      * @param styleSheets style sheets
      * @return builder
@@ -105,7 +105,7 @@ public class AlertBuilder {
     }
 
     /**
-     * Constructs a new alert object
+     * Constructs a new alert object.
      *
      * @return alert isntance
      */
