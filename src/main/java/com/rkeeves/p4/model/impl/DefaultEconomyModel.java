@@ -34,8 +34,8 @@ class DefaultEconomyModel implements EconomyModel {
     static DefaultEconomyModel create(EconomyDTO dto){
         var economyConstantsModel = DefaultEconomyParametersModel.create(dto.getEconomyParameters());
         var result = new ProductModelsFactory().create(economyConstantsModel, dto.getProducts());
-        var dependencyMatrix = result.getSome();
-        var productList = result.getOther();
+        var dependencyMatrix = result.getKey();
+        var productList = result.getValue();
         return DefaultEconomyModel.builder()
                 .economyParametersModel(economyConstantsModel)
                 .dependencyMatrix(dependencyMatrix)
