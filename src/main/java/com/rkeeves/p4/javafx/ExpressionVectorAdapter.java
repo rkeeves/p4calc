@@ -2,6 +2,11 @@ package com.rkeeves.p4.javafx;
 
 import javafx.beans.binding.NumberExpression;
 
+/**
+ * This generic entity adapts an array to be able to act as a read only expression vector.
+ *
+ * @param <T> the type of the array elements
+ */
 public class ExpressionVectorAdapter<T extends NumberExpression> implements ExpressionVector{
 
     private final T[] array;
