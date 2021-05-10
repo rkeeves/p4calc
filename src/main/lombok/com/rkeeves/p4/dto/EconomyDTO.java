@@ -15,7 +15,7 @@ public class EconomyDTO {
     /**
      * -- GETTER --
      * Returns the object describing the parameters of the economy.
-     * * @return economy parameters object
+     * @return economy parameters object
      * -- SETTER --
      * Changes the object describing the parameters of the economy.
      * @param economyParameters new economy parameters object
