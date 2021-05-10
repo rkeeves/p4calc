@@ -4,13 +4,12 @@ import com.rkeeves.p4.dto.EconomyParametersDTO;
 import com.rkeeves.p4.model.EconomyParametersModel;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-
-import static com.rkeeves.p4.javafx.Properties.doubleProp;
-import static com.rkeeves.p4.javafx.Properties.intProp;
 
 @Data
 @Builder(access = AccessLevel.PRIVATE)
@@ -35,14 +34,14 @@ class DefaultEconomyParametersModel implements EconomyParametersModel {
 
     public static DefaultEconomyParametersModel create(EconomyParametersDTO dto){
         return DefaultEconomyParametersModel.builder()
-                .kgPerBarrelProperty(doubleProp(dto.getKgPerBarrel()))
-                .globalMarketDemandMultiplierProperty(doubleProp(dto.getGlobalMarketDemandMultiplier()))
-                .consumerCountProperty(intProp(dto.getConsumerCount()))
-                .globalSellPriceMultiplierProperty(doubleProp(dto.getGlobalSellPriceFactor()))
-                .workersPerWorkshopProperty(intProp(dto.getWorkersPerWorkshop()))
-                .wagePerWorkerProperty(intProp(dto.getWagePerWorker()))
-                .fixedPropertyTaxProperty(intProp(dto.getFixedPropertyTax()))
-                .fixedRunningCostProperty(intProp(dto.getFixedRunningCost()))
+                .kgPerBarrelProperty(new SimpleDoubleProperty(dto.getKgPerBarrel()))
+                .globalMarketDemandMultiplierProperty(new SimpleDoubleProperty(dto.getGlobalMarketDemandMultiplier()))
+                .consumerCountProperty(new SimpleIntegerProperty(dto.getConsumerCount()))
+                .globalSellPriceMultiplierProperty(new SimpleDoubleProperty(dto.getGlobalSellPriceFactor()))
+                .workersPerWorkshopProperty(new SimpleIntegerProperty(dto.getWorkersPerWorkshop()))
+                .wagePerWorkerProperty(new SimpleIntegerProperty(dto.getWagePerWorker()))
+                .fixedPropertyTaxProperty(new SimpleIntegerProperty(dto.getFixedPropertyTax()))
+                .fixedRunningCostProperty(new SimpleIntegerProperty(dto.getFixedRunningCost()))
                 .build();
     }
 }
