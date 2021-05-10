@@ -1,6 +1,5 @@
 package com.rkeeves.p4.javafx.component;
 
-import javafx.beans.binding.NumberExpression;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.scene.control.TextField;
@@ -36,10 +35,6 @@ public class TextFields {
     private static final StringConverter<? extends Number> intConverter = new IntegerStringConverter();
 
     private static final StringConverter<? extends Number> doubleConverter = new DoubleStringConverter();
-
-    public static void bindExpression(TextField textField, NumberExpression expression){
-        textField.textProperty().bind(expression.asString());
-    }
 
     public static void bindBidirectional(TextField textField, IntegerProperty integerProperty){
         textField.setTextFormatter(new TextFormatter<>(intFilter));
