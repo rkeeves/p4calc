@@ -13,6 +13,12 @@ public class ExpressionVectors {
 
     }
 
+    /**
+     * Creates an array expression vector based on the double array given by the user.
+     *
+     * @param defaultValues user given array
+     * @return array expression vector
+     */
     public static ArrayExpressionVector arrayExpressionVector(double[] defaultValues){
         NumberExpression[] array = new DoubleExpression[defaultValues.length];
         for (int i = 0; i < defaultValues.length; i++) {
@@ -21,6 +27,13 @@ public class ExpressionVectors {
         return new ArrayExpressionVector(array);
     }
 
+    /**
+     * Returns a primitive double array whose elements are the
+     * current values of the expression vector.
+     *
+     * @param vector the expression vector to be transformed
+     * @return primitive double array
+     */
     public static double[] toArray(ExpressionVector vector){
         double[] array = new double[vector.size()];
         for (int i = 0; i < vector.size(); i++) {
@@ -29,6 +42,12 @@ public class ExpressionVectors {
         return array;
     }
 
+    /**
+     * Returns a string representation of the current values of the expression vector.
+     *
+     * @param vector the expression vector to be transformed
+     * @return string representation
+     */
     public static String toString(ExpressionVector vector){
         return IntStream.range(0,vector.size())
                 .mapToObj(vector::get)
