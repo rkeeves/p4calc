@@ -33,7 +33,7 @@ public class ExpressionVectors {
         return IntStream.range(0,vector.size())
                 .mapToObj(vector::get)
                 .map(NumberExpression::doubleValue)
-                .map(Numbers::doubleToString)
+                .map(num->Double.toString(num))
                 .collect(Collectors.joining(", "));
     }
 }

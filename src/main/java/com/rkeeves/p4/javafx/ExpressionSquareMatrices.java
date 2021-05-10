@@ -56,7 +56,7 @@ public class ExpressionSquareMatrices {
         return "[" + IntStream.range(0,symmetricMatrix.size())
                 .mapToObj(row-> "[" + IntStream.range(0,symmetricMatrix.size())
                     .mapToDouble(col->symmetricMatrix.get(row,col).doubleValue())
-                    .mapToObj(Numbers::doubleToString)
+                    .mapToObj(num->Double.toString(num))
                     .collect(Collectors.joining(", ")) + "]")
                 .collect(Collectors.joining(", ")) +"]";
     }
