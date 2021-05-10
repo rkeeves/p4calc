@@ -2,6 +2,9 @@ package com.rkeeves.p4.dto;
 
 import com.rkeeves.p4.model.EconomyModel;
 
+/**
+ * This entity is a default implementation of a service which transforms economy models into dtos.
+ */
 public class DefaultEconomyDTOService implements EconomyDTOService{
 
     private final EconomyDTOMapper economyDTOMapper = new EconomyDTOMapper(new EconomyParametersDTOMapper(), new ProductDTOMapper());
