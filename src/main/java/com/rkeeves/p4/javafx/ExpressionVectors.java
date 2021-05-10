@@ -7,6 +7,9 @@ import javafx.beans.property.SimpleDoubleProperty;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * A helper class for expression vector related methods.
+ */
 public class ExpressionVectors {
 
     private ExpressionVectors(){
