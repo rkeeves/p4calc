@@ -16,16 +16,11 @@ class SumDemandVectorFactory {
 
     static ExpressionVector createSumDemandVector(DependencyMatrix dependencyMatrix, List<DefaultProductModel> productModels){
         var demandMatrix = new DemandMatrix(dependencyMatrix);
-        var marketDemandsVector = createMarketDemandVector(productModels);
-        return multiplyMatrixWithVector(demandMatrix, marketDemandsVector);
-    }
-
-
-    static ExpressionVector createMarketDemandVector(List<DefaultProductModel> productModels){
         var marketDemandsArray = new NumberExpression[productModels.size()];
         for (int i = 0; i < productModels.size(); i++) {
             marketDemandsArray[i] = productModels.get(i).getMarketDemandProperty();
         }
-        return new ExpressionVectorAdapter<>(marketDemandsArray);
+        var marketDemandsVector = new ExpressionVectorAdapter<>(marketDemandsArray);
+        return multiplyMatrixWithVector(demandMatrix, marketDemandsVector);
     }
 }
