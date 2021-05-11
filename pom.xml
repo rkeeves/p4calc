@@ -243,6 +243,14 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude>com/rkeeves/p4/*</exclude>
+                        <exclude>com/rkeeves/p4/controller/*</exclude>
+                        <exclude>com/rkeeves/p4/javafx/ui/*</exclude>
+                        <exclude>com/rkeeves/p4/io/*</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </reporting>
