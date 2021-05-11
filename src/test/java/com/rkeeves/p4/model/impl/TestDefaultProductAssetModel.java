@@ -40,17 +40,17 @@ class TestDefaultProductAssetModel {
         productA.getProductionPerWorkshopProperty().set(10.1);
         productA.getSumDemandProperty().set(1005.5);
         var productB = new MockProductModel();
-        productA.getNameProperty().set("B");
-        productA.getMarketDemandFulfillmentRatioProperty().set(130);
-        productA.getBaseDemandInKgProperty().set(142.1);
+        productB.getNameProperty().set("B");
+        productB.getMarketDemandFulfillmentRatioProperty().set(130);
+        productB.getBaseDemandInKgProperty().set(142.1);
         var productC = new MockProductModel();
-        productA.getNameProperty().set("C");
-        productA.getMarketDemandFulfillmentRatioProperty().set(0);
-        productA.getBaseDemandInKgProperty().set(0);
+        productC.getNameProperty().set("C");
+        productC.getMarketDemandFulfillmentRatioProperty().set(0);
+        productC.getBaseDemandInKgProperty().set(0);
         var economyParameters1 = new MockEconomyParametersModel();
-        economyParameters0.getWorkersPerWorkshopProperty().set(1000);
+        economyParameters1.getWorkersPerWorkshopProperty().set(1000);
         var economyParameters2 = new MockEconomyParametersModel();
-        economyParameters0.getWorkersPerWorkshopProperty().set(0);
+        economyParameters2.getWorkersPerWorkshopProperty().set(0);
         return Stream.of(
                 Arguments.of(economyParameters0, productA, productA),
                 Arguments.of(economyParameters0, productB, productB),
@@ -60,7 +60,7 @@ class TestDefaultProductAssetModel {
                 Arguments.of(economyParameters1, productC, productC),
                 Arguments.of(economyParameters2, productA, productA),
                 Arguments.of(economyParameters2, productB, productB),
-                Arguments.of(economyParameters2, productC, productA)
+                Arguments.of(economyParameters2, productC, productC)
         );
     }
 }
