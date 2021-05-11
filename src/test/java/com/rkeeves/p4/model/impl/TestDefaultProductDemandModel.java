@@ -41,15 +41,26 @@ class TestDefaultProductDemandModel {
         productA.getNameProperty().set("B");
         productA.getMarketDemandFulfillmentRatioProperty().set(130);
         productA.getBaseDemandInKgProperty().set(142.1);
+        var productC = new MockProductModel();
+        productA.getNameProperty().set("C");
+        productA.getMarketDemandFulfillmentRatioProperty().set(130);
+        productA.getBaseDemandInKgProperty().set(0);
         var economyParameters1 = new MockEconomyParametersModel();
         economyParameters1.getGlobalMarketDemandMultiplierProperty().set(1.8);
         economyParameters1.getKgPerBarrelProperty().set(1701);
         economyParameters1.getConsumerCountProperty().set(12345);
+        var economyParameters2 = new MockEconomyParametersModel();
+        economyParameters2.getKgPerBarrelProperty().set(0.0);
         return Stream.of(
                 Arguments.of(economyParameters0, productA),
                 Arguments.of(economyParameters0, productB),
+                Arguments.of(economyParameters0, productC),
                 Arguments.of(economyParameters1, productA),
-                Arguments.of(economyParameters1, productB)
+                Arguments.of(economyParameters1, productB),
+                Arguments.of(economyParameters1, productC),
+                Arguments.of(economyParameters2, productA),
+                Arguments.of(economyParameters2, productB),
+                Arguments.of(economyParameters2, productC)
         );
     }
 }
