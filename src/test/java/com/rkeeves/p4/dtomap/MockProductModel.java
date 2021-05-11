@@ -10,23 +10,23 @@ import java.util.Map;
 import java.util.Optional;
 
 @Data
-class MockProductModel implements ProductModel {
+public class MockProductModel implements ProductModel {
 
     private final IntegerProperty workshopCountProperty = new SimpleIntegerProperty();
 
     private final IntegerProperty requiredWorkerCountProperty  = new SimpleIntegerProperty();
 
-    private final StringProperty nameProperty  = new SimpleStringProperty();
+    private final StringProperty nameProperty  = new SimpleStringProperty("");
 
-    private final IntegerProperty marketDemandFulfillmentRatioProperty = new SimpleIntegerProperty();
+    private final IntegerProperty marketDemandFulfillmentRatioProperty = new SimpleIntegerProperty(100);
 
-    private final DoubleProperty baseDemandInKgProperty = new SimpleDoubleProperty();
+    private final DoubleProperty baseDemandInKgProperty = new SimpleDoubleProperty(2.5);
 
-    private final DoubleProperty productionPerWorkshopProperty = new SimpleDoubleProperty();
+    private final DoubleProperty productionPerWorkshopProperty = new SimpleDoubleProperty(6.0);
 
-    private final DoubleProperty basePriceProperty = new SimpleDoubleProperty();
+    private final DoubleProperty basePriceProperty = new SimpleDoubleProperty(33.0);
 
-    private final DoubleProperty baseDemandProperty = new SimpleDoubleProperty();
+    private final DoubleProperty baseDemandProperty = new SimpleDoubleProperty(2.5);
 
     private final DoubleProperty marketDemandProperty = new SimpleDoubleProperty();
 
