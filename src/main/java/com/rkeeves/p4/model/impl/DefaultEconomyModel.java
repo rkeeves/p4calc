@@ -37,21 +37,22 @@ class DefaultEconomyModel implements EconomyModel {
 
     static DefaultEconomyModel create(EconomyDTO dto){
         var economyConstantsModel = DefaultEconomyParametersModel.create(dto.getEconomyParameters());
-        var defaultProductModels = createProductModels(economyConstantsModel, dto.getProducts());
-        var dependencyMatrix = DependencyMatrixFactory.createDependencyMatrix(defaultProductModels);
+        var productDTOs = dto.getProducts();
+        var defaultProductModels = createProductModels(economyConstantsModel, productDTOs);
+        var dependencyMatrix = DependencyMatrixFactory.createDependencyMatrix(productDTOs);
         var sumDemandVector = SumDemandVectorFactory.createSumDemandVector(dependencyMatrix,defaultProductModels);
-        IngredientPopulator.create(dependencyMatrix,sumDemandVector,defaultProductModels);
+        var productModels = IngredientPopulator.create(dependencyMatrix,sumDemandVector,defaultProductModels);
         return DefaultEconomyModel.builder()
                 .economyParametersModel(economyConstantsModel)
                 .dependencyMatrix(dependencyMatrix)
-                .productModels(FXCollections.observableArrayList(defaultProductModels))
+                .productModels(FXCollections.observableArrayList(productModels))
                 .build();
     }
 
-    private static List<DefaultProductModel> createProductModels(EconomyParametersModel constants, List<ProductDTO> productDTOs){
+    private static List<DefaultProductModel> createProductModels(EconomyParametersModel parametersModel, List<ProductDTO> productDTOs){
         return productDTOs.stream()
                 .sequential()
-                .map(productDTO->DefaultProductModel.create(constants, productDTO))
+                .map(productDTO->DefaultProductModel.create(parametersModel, productDTO))
                 .collect(Collectors.toList());
     }
 }
