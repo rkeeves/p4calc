@@ -1,7 +1,8 @@
 package com.rkeeves.p4.dtomap;
 
+import com.rkeeves.p4.model.MutableProductModel;
 import com.rkeeves.p4.model.ProductBasicPropertiesModel;
-import com.rkeeves.p4.model.ProductModel;
+import javafx.beans.binding.NumberExpression;
 import javafx.beans.property.*;
 import lombok.Data;
 
@@ -10,7 +11,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Data
-public class MockProductModel implements ProductModel {
+public class MockProductModel implements MutableProductModel {
 
     private final IntegerProperty workshopCountProperty = new SimpleIntegerProperty();
 
@@ -59,5 +60,10 @@ public class MockProductModel implements ProductModel {
                 return Optional.of(entry.getValue());
         }
         return Optional.empty();
+    }
+
+    @Override
+    public void bindSumDemandExpression(NumberExpression sumDemandExpression) {
+        this.sumDemandProperty.bind(sumDemandExpression);
     }
 }
