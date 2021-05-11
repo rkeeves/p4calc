@@ -48,7 +48,7 @@ class TestSumDemandVectorFactory {
                 makeMarketDemandsModels(marketDemands),
                 sumDemands);
     }
-    
+
     private static Arguments caseOne() {
         var demandArray = new double[][]{
                 {0.0}
