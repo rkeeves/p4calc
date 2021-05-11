@@ -53,7 +53,7 @@ public class ExpressionSquareMatrices {
                 resultVector[row] = resultVector[row].add(pairProduct);
             }
         }
-        return new ArrayExpressionVector(resultVector);
+        return new ExpressionVectorAdapter<>(resultVector);
     }
 
     /**
