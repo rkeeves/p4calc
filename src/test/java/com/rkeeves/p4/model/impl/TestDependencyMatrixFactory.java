@@ -26,7 +26,7 @@ class TestDependencyMatrixFactory {
 
     @ParameterizedTest
     @MethodSource("dependencyMatrix_provideTestCases")
-    void createDependencyMatrix_WhenGivenValidProducts_ReturnsValidLowerTriangleMatrix(List<ProductDTO> dtos,
+    void createDependencyMatrix_WhenGivenValidProducts_ReturnsValidDependencyMatrix(List<ProductDTO> dtos,
                                                                                        double[][] expectedLowerTriangleMatrix,
                                                                                        double[][] expectedDependencyMatrix){
         var actualDependencyMatrix = DependencyMatrixFactory.createDependencyMatrix(dtos);
