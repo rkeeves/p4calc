@@ -21,7 +21,7 @@ public class ProductDTO {
      *
      * @param name new name
      */
-    private String name;
+    private String name = "";
 
     /**
      * -- GETTER --
@@ -61,7 +61,7 @@ public class ProductDTO {
      *
      * @param baseDemandInKg new base demand in kg
      */
-    private Double baseDemandInKg;
+    private Double baseDemandInKg = 1.0;
 
     /**
      * -- GETTER --
@@ -73,7 +73,7 @@ public class ProductDTO {
      *
      * @param productionPerWorkshop new production per workshop in barrels
      */
-    private Double productionPerWorkshop;
+    private Double productionPerWorkshop = 1.0;
 
     /**
      * -- GETTER --
@@ -85,7 +85,7 @@ public class ProductDTO {
      *
      * @param basePrice new base price
      */
-    private Double basePrice;
+    private Double basePrice = 33.0;
 
 
     /**
