@@ -1,5 +1,6 @@
-package com.rkeeves.p4.dto;
+package com.rkeeves.p4.dtomap;
 
+import com.rkeeves.p4.dto.ProductDTO;
 import com.rkeeves.p4.model.ProductModel;
 
 import java.util.HashMap;

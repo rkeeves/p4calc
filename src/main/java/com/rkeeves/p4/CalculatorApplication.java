@@ -1,8 +1,8 @@
 package com.rkeeves.p4;
 
 import com.rkeeves.p4.controller.*;
-import com.rkeeves.p4.dto.DefaultEconomyDTOService;
-import com.rkeeves.p4.dto.EconomyDTOService;
+import com.rkeeves.p4.dtomap.DefaultEconomyDTOService;
+import com.rkeeves.p4.dtomap.EconomyDTOService;
 import com.rkeeves.p4.io.*;
 import com.rkeeves.p4.model.EconomyModelService;
 import com.rkeeves.p4.model.impl.DefaultEconomyModelService;

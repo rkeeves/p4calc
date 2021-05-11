@@ -1,4 +1,4 @@
-package com.rkeeves.p4.dto;
+package com.rkeeves.p4.dtomap;
 
 import com.rkeeves.p4.model.ProductBasicPropertiesModel;
 import javafx.beans.property.DoubleProperty;

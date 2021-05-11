@@ -1,4 +1,4 @@
-package com.rkeeves.p4.dto;
+package com.rkeeves.p4.dtomap;
 
 /**
  * This entity represents an object capable of transforming a model object into a Data Transfer Object.

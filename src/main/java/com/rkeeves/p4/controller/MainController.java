@@ -1,7 +1,7 @@
 package com.rkeeves.p4.controller;
 
 import com.rkeeves.p4.dto.EconomyDTO;
-import com.rkeeves.p4.dto.EconomyDTOService;
+import com.rkeeves.p4.dtomap.EconomyDTOService;
 import com.rkeeves.p4.io.*;
 import com.rkeeves.p4.model.DTOInvalidException;
 import com.rkeeves.p4.model.EconomyModel;
