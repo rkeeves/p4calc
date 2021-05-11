@@ -8,6 +8,10 @@ import java.util.stream.Collectors;
 
 class IngredientPopulator {
 
+    private IngredientPopulator(){
+
+    }
+
     static List<ProductModel> create(DependencyMatrix dependencyMatrix,
                                                      ExpressionVector sumDemands,
                                                      List<DefaultProductModel> productModels){

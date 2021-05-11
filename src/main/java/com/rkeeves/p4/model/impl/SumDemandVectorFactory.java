@@ -10,6 +10,10 @@ import static com.rkeeves.p4.javafx.ExpressionSquareMatrices.multiplyMatrixWithV
 
 class SumDemandVectorFactory {
 
+    private SumDemandVectorFactory(){
+
+    }
+
     static ExpressionVector createSumDemandVector(DependencyMatrix dependencyMatrix, List<DefaultProductModel> productModels){
         var demandMatrix = new DemandMatrix(dependencyMatrix);
         var marketDemandsVector = createMarketDemandVector(productModels);

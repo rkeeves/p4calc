@@ -6,6 +6,10 @@ import java.util.List;
 
 class DependencyMatrixFactory {
 
+    private DependencyMatrixFactory(){
+
+    }
+
     static DependencyMatrix createDependencyMatrix(List<ProductDTO> productDTOs){
         var ingredientsLowerTriangleMatrix = createIngredientsLowerTriangleMatrix(productDTOs);
         return DependencyMatrix.createByLowerTriangleValues(ingredientsLowerTriangleMatrix);
