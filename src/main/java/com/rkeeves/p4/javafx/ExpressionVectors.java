@@ -17,17 +17,17 @@ public class ExpressionVectors {
     }
 
     /**
-     * Creates an array expression vector based on the double array given by the user.
+     * Creates an expression vector based on the double array given by the user.
      *
      * @param defaultValues user given array
-     * @return array expression vector
+     * @return expression vector
      */
-    public static ArrayExpressionVector arrayExpressionVector(double[] defaultValues){
+    public static ExpressionVector of(double[] defaultValues){
         NumberExpression[] array = new DoubleExpression[defaultValues.length];
         for (int i = 0; i < defaultValues.length; i++) {
             array[i] = new SimpleDoubleProperty(defaultValues[i]);
         }
-        return new ArrayExpressionVector(array);
+        return new ExpressionVectorAdapter<>(array);
     }
 
     /**
