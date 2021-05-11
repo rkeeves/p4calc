@@ -31,13 +31,13 @@ class TestDefaultProductBasicPropertiesModel {
         dtoA.setMarketDemandFulfillmentRatio(100);
         dtoA.getIngredients().put("B",10.0);
         var dtoB = new ProductDTO();
-        dtoA.setName("B");
-        dtoA.setBaseDemandInKg(1.1);
-        dtoA.setBasePrice(50.6);
-        dtoA.setProductionPerWorkshop(665.5);
-        dtoA.setMarketDemandFulfillmentRatio(70);
-        dtoA.getIngredients().put("C",16.0);
-        dtoA.getIngredients().put("D",17.0);
+        dtoB.setName("B");
+        dtoB.setBaseDemandInKg(1.1);
+        dtoB.setBasePrice(50.6);
+        dtoB.setProductionPerWorkshop(665.5);
+        dtoB.setMarketDemandFulfillmentRatio(70);
+        dtoB.getIngredients().put("C",16.0);
+        dtoB.getIngredients().put("D",17.0);
         return Stream.of(
                 Arguments.of(dtoA),
                 Arguments.of(dtoB)
