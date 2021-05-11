@@ -11,8 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class TestExpressionSquareMatrices {
 
@@ -139,6 +138,30 @@ class TestExpressionSquareMatrices {
                 Arguments.of(symMatrix(matrix1),vec(vector1),vec(product1)),
                 Arguments.of(symMatrix(matrix2),vec(vector2),vec(product2)),
                 Arguments.of(symMatrix(matrix3),vec(vector3),vec(product3))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("multiplyMatrixWithVector_provideTestCasesForIncompatibleSizes")
+    void multiplyMatrixWithVector_WhenGivenMatrixAndVectorOfIncompatibleSizes_Throws(ExpressionSquareMatrix matrix, ExpressionVector vector){
+        assertThrows(IndexOutOfBoundsException.class, ()->ExpressionSquareMatrices.multiplyMatrixWithVector(matrix, vector));
+    }
+
+    private static Stream<Arguments> multiplyMatrixWithVector_provideTestCasesForIncompatibleSizes(){
+        var matrix = new double[][]{
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9},
+        };
+        var vector0 = new double[]{};
+        var vector1 = new double[]{1};
+        var vector2 = new double[]{1, 2};
+        var vector4 = new double[]{1,2,3,4};
+        return Stream.of(
+                Arguments.of(symMatrix(matrix),vec(vector0)),
+                Arguments.of(symMatrix(matrix),vec(vector1)),
+                Arguments.of(symMatrix(matrix),vec(vector2)),
+                Arguments.of(symMatrix(matrix),vec(vector4))
         );
     }
 }
