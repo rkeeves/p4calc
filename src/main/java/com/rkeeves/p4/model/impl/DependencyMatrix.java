@@ -12,17 +12,14 @@ class DependencyMatrix implements ExpressionSquareMatrix, LowerTriangleMatrix {
     private final DoubleProperty[][] squareMatrix;
 
     static DependencyMatrix createByLowerTriangleValues(double[][] valueMatrix){
-        var dependencyMatrix = DependencyMatrix.create(valueMatrix.length);
-        for (int i = 1; i < valueMatrix.length; i++) {
+        int size = valueMatrix.length;
+        var dependencyMatrix =new DependencyMatrix(ExpressionSquareMatrices.doublePropertySquareMatrix(size));
+        for (int i = 1; i < size; i++) {
             for (int j = 0; j < i; j++) {
                 dependencyMatrix.getElementOfLowerTriangle(i,j).set(valueMatrix[i][j]);
             }
         }
         return dependencyMatrix;
-    }
-
-    static DependencyMatrix create(int productCount){
-        return new DependencyMatrix(ExpressionSquareMatrices.doublePropertySquareMatrix(productCount));
     }
 
     private DependencyMatrix(DoubleProperty[][] squareMatrix) {
