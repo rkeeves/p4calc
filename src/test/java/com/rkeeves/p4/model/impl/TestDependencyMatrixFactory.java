@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-public class TestDependencyMatrixFactory {
+class TestDependencyMatrixFactory {
 
     @ParameterizedTest
     @MethodSource("dependencyMatrix_provideTestCases")
