@@ -62,9 +62,4 @@ class DependencyMatrix implements ExpressionSquareMatrix, LowerTriangleMatrix {
     double[][] toArray(){
         return ExpressionSquareMatrices.toArray(this);
     }
-
-    @Override
-    public String toString() {
-        return"DependencyMatrix{" + ExpressionSquareMatrices.toString(this) + "}";
-    }
 }
