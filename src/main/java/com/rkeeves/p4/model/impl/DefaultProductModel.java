@@ -17,7 +17,7 @@ import java.util.Optional;
 @Data
 @Builder(access = AccessLevel.PRIVATE)
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-class DefaultProductModel implements ProductModel {
+class DefaultProductModel implements MutableProductModel {
 
     private final ProductBasicPropertiesModel basicPropertiesModel;
 
