@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestDefaultProductBasicPropertiesModel {
+class TestDefaultProductBasicPropertiesModel {
 
     @ParameterizedTest
     @MethodSource("create_provideTestCases")
