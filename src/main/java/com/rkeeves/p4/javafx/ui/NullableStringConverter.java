@@ -1,4 +1,4 @@
-package com.rkeeves.p4.javafx.component;
+package com.rkeeves.p4.javafx.ui;
 
 import javafx.util.StringConverter;
 

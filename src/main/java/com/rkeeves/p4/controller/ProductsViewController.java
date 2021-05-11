@@ -7,7 +7,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import lombok.RequiredArgsConstructor;
 
-import static com.rkeeves.p4.javafx.component.TableColumns.*;
+import static com.rkeeves.p4.javafx.ui.TableColumns.*;
 
 @RequiredArgsConstructor
 public class ProductsViewController implements Wireable<EconomyModel>{

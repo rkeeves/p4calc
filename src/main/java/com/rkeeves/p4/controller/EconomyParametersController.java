@@ -1,6 +1,6 @@
 package com.rkeeves.p4.controller;
 
-import com.rkeeves.p4.javafx.component.TextFields;
+import com.rkeeves.p4.javafx.ui.TextFields;
 import com.rkeeves.p4.model.EconomyParametersModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

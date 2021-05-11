@@ -1,6 +1,6 @@
 package com.rkeeves.p4.controller;
 
-import com.rkeeves.p4.javafx.component.TextFields;
+import com.rkeeves.p4.javafx.ui.TextFields;
 import com.rkeeves.p4.model.EconomyModel;
 import com.rkeeves.p4.model.LowerTriangleMatrix;
 import com.rkeeves.p4.model.ProductModel;

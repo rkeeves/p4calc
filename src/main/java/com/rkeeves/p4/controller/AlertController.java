@@ -1,6 +1,6 @@
 package com.rkeeves.p4.controller;
 
-import com.rkeeves.p4.javafx.component.AlertBuilder;
+import com.rkeeves.p4.javafx.ui.AlertBuilder;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import lombok.RequiredArgsConstructor;

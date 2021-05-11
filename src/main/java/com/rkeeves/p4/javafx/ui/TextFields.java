@@ -1,4 +1,4 @@
-package com.rkeeves.p4.javafx.component;
+package com.rkeeves.p4.javafx.ui;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
