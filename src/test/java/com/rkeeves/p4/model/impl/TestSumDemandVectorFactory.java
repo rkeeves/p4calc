@@ -18,22 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestSumDemandVectorFactory {
 
-    @RequiredArgsConstructor
-    static class SimpleExpressionSquareMatrix implements ExpressionSquareMatrix {
-
-        private final double[][] array;
-
-        @Override
-        public int size() {
-            return array.length;
-        }
-
-        @Override
-        public NumberExpression get(int row, int col) {
-            return new SimpleDoubleProperty(array[row][col]);
-        }
-    }
-
     @ParameterizedTest
     @MethodSource("createSumDemandVector_provideTestCases")
     void createSumDemandVector_WhenGivenValidInput_ReturnValidVector(ExpressionSquareMatrix dependencyMatrix,
@@ -149,5 +133,21 @@ class TestSumDemandVectorFactory {
         return Arrays.stream(marketDemands)
                 .mapToObj(MockSumDemandModel::new)
                 .collect(Collectors.toList());
+    }
+
+    @RequiredArgsConstructor
+    static class SimpleExpressionSquareMatrix implements ExpressionSquareMatrix {
+
+        private final double[][] array;
+
+        @Override
+        public int size() {
+            return array.length;
+        }
+
+        @Override
+        public NumberExpression get(int row, int col) {
+            return new SimpleDoubleProperty(array[row][col]);
+        }
     }
 }
