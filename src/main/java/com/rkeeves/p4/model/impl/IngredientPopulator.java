@@ -13,8 +13,8 @@ class IngredientPopulator {
     }
 
     static List<ProductModel> create(DependencyMatrix dependencyMatrix,
-                                                     ExpressionVector sumDemands,
-                                                     List<DefaultProductModel> productModels){
+                                     ExpressionVector sumDemands,
+                                     List<DefaultProductModel> productModels){
         bindSumDemandsToProductModels(productModels, sumDemands);
         populateIngredientMaps(productModels, dependencyMatrix);
         return productModels.stream()
