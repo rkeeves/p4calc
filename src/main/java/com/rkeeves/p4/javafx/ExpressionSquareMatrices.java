@@ -5,9 +5,6 @@ import javafx.beans.binding.NumberExpression;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 /**
  * A static helper class for methods dealing with expression square matrices.
  */
@@ -73,20 +70,5 @@ public class ExpressionSquareMatrices {
             }
         }
         return primitiveMatrix;
-    }
-
-    /**
-     * Returns a string representation of the current values of the symmetric matrix.
-     *
-     * @param symmetricMatrix the symmetric matrix to be transformed
-     * @return string representation of the matrix's current state
-     */
-    public static String toString(ExpressionSquareMatrix symmetricMatrix){
-        return "[" + IntStream.range(0,symmetricMatrix.size())
-                .mapToObj(row-> "[" + IntStream.range(0,symmetricMatrix.size())
-                    .mapToDouble(col->symmetricMatrix.get(row,col).doubleValue())
-                    .mapToObj(num->Double.toString(num))
-                    .collect(Collectors.joining(", ")) + "]")
-                .collect(Collectors.joining(", ")) +"]";
     }
 }
