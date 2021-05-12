@@ -22,13 +22,7 @@ class DefaultEconomyModel implements EconomyModel {
 
     private final DependencyMatrix dependencyMatrix;
 
-    @Getter(AccessLevel.PRIVATE)
     private final ObservableList<ProductModel> productModels;
-
-    @Override
-    public ObservableList<ProductModel> listProductModels() {
-        return productModels;
-    }
 
     @Override
     public LowerTriangleMatrix getDependencyMatrixMutableLowerTriangle() {

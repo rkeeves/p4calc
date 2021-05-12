@@ -19,7 +19,7 @@ public interface EconomyModel {
      *
      * @return list of product models
      */
-    ObservableList<ProductModel> listProductModels();
+    ObservableList<ProductModel> getProductModels();
 
     /**
      * Returns the lower triangle matrix describing product dependencies.

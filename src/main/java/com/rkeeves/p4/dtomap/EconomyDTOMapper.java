@@ -20,7 +20,7 @@ public class EconomyDTOMapper implements DTOMapper<EconomyModel, EconomyDTO> {
     public EconomyDTO toDTO(EconomyModel model) {
         var dto = new EconomyDTO();
         dto.setEconomyParameters(economyParametersDTOMapper.toDTO(model.getEconomyParametersModel()));
-        var products = model.listProductModels()
+        var products = model.getProductModels()
                 .stream()
                 .map(productDTOMapper::toDTO)
                 .collect(Collectors.toList());

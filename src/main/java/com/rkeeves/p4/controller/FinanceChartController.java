@@ -35,7 +35,7 @@ public class FinanceChartController implements Wireable<EconomyModel>{
         var series = new XYChart.Series<String,Number>();
         series.setName(label);
         var dataList = series.getData();
-        model.listProductModels()
+        model.getProductModels()
                 .stream()
                 .map(product-> new Pair<>(product.getNameProperty(), propertyGetter.apply(product)))
                 .map(both->{

@@ -4,6 +4,7 @@ import com.rkeeves.p4.dto.ProductDTO;
 import com.rkeeves.p4.dtomap.MockEconomyParametersModel;
 import com.rkeeves.p4.dtomap.MockProductModel;
 import com.rkeeves.p4.model.EconomyParametersModel;
+import javafx.beans.property.SimpleDoubleProperty;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -32,9 +33,12 @@ class TestDefaultProductModel {
         var model = DefaultProductModel.create(parametersModel, productDTO);
         var basicPropertiesModel = DefaultProductBasicPropertiesModel.create(productDTO);
         var expected = DefaultProductDemandModel.create(parametersModel, basicPropertiesModel);
+        double newSumDemand = 45.5;
         assertEquals(expected.getBaseDemandProperty().doubleValue(), model.getBaseDemandProperty().doubleValue());
         assertEquals(expected.getMarketDemandProperty().doubleValue(), model.getMarketDemandProperty().doubleValue());
         assertEquals(expected.getSumDemandProperty().doubleValue(), model.getSumDemandProperty().doubleValue());
+        model.bindSumDemandExpression(new SimpleDoubleProperty(newSumDemand));
+        assertEquals(newSumDemand, model.getSumDemandProperty().doubleValue());
     }
 
     @ParameterizedTest

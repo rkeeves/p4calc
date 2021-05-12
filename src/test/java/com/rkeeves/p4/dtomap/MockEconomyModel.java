@@ -26,7 +26,7 @@ public class MockEconomyModel implements EconomyModel {
     }
 
     @Override
-    public ObservableList<ProductModel> listProductModels() {
+    public ObservableList<ProductModel> getProductModels() {
         return FXCollections.observableArrayList(productModels);
     }
 

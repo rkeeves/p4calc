@@ -4,6 +4,7 @@ import com.rkeeves.p4.dtomap.MockEconomyParametersModel;
 import com.rkeeves.p4.dtomap.MockProductModel;
 import com.rkeeves.p4.model.EconomyParametersModel;
 import com.rkeeves.p4.model.ProductBasicPropertiesModel;
+import javafx.beans.property.SimpleDoubleProperty;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -29,6 +30,9 @@ class TestDefaultProductDemandModel {
         assertEquals(expectedBaseDemand, model.getBaseDemandProperty().doubleValue());
         assertEquals(expectedMarketDemand, model.getMarketDemandProperty().doubleValue());
         assertEquals(0.0, model.getSumDemandProperty().doubleValue());
+        double newSumDemand = 56.6;
+        model.bindSumDemandExpression(new SimpleDoubleProperty(newSumDemand));
+        assertEquals(newSumDemand, model.getSumDemandProperty().doubleValue());
     }
 
     private static Stream<Arguments> create_provideTestCases(){

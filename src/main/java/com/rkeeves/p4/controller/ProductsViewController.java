@@ -59,7 +59,7 @@ public class ProductsViewController implements Wireable<EconomyModel>{
 
     @Override
     public void wireModel(EconomyModel model) {
-        productModelsTable.itemsProperty().set(model.listProductModels());
+        productModelsTable.itemsProperty().set(model.getProductModels());
         readonlyColumnForProperty(columnName, ProductBasicPropertiesModel::getNameProperty);
         editableColumnForInteger(columnMarketDemandFulfillmentRatio, ProductModel::getMarketDemandFulfillmentRatioProperty);
         editableColumnForDouble(columnBasePrice, ProductModel::getBasePriceProperty);

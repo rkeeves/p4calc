@@ -30,7 +30,7 @@ public class IngredientsController implements Wireable<EconomyModel>{
 
     private void setupGrid(EconomyModel economyModel){
         gridPaneIngredientMatrix.getChildren().clear();
-        var products = economyModel.listProductModels();
+        var products = economyModel.getProductModels();
         var lowerTriangle = economyModel.getDependencyMatrixMutableLowerTriangle();
         setupRowLabels(products);
         setupColumnLabels(products);

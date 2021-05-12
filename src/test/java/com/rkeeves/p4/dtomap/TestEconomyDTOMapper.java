@@ -49,7 +49,7 @@ public class TestEconomyDTOMapper {
         productModels.addAll(List.of(productA,productB));
         var actualEconomyDTO = economyDTOMapper.toDTO(economyModel);
         var actualProducts = actualEconomyDTO.getProducts();
-        var expectedProducts = economyModel.listProductModels()
+        var expectedProducts = economyModel.getProductModels()
                 .stream()
                 .map(productDTOMapper::toDTO)
                 .collect(Collectors.toList());
