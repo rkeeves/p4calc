@@ -1,0 +1,43 @@
+{
+  "economyDTO" : {
+    "economyParameters" : {
+      "globalMarketDemandMultiplier" :  10.0,
+      "kgPerBarrel" :  10.0,
+      "consumerCount" :  100,
+      "globalSellPriceFactor" :  2.0,
+      "workersPerWorkshop" :  100,
+      "wagePerWorker" :  2,
+      "fixedPropertyTax" :  2,
+      "fixedRunningCost" :  2
+    },
+    "products" : [
+      {
+        "name" : "A",
+        "ingredients" : { },
+        "baseDemandInKg" : 1.0,
+        "productionPerWorkshop" : 2,
+        "basePrice" : 10.0
+      }
+    ]
+  },
+  "expectedDerivedProductAttributes" : {
+    "A": {
+      "name": "A",
+      "ingredients": {},
+      "baseDemandInKg": 1.0,
+      "productionPerWorkshop": 2,
+      "basePrice": 117.0,
+      "baseDemand": 1,
+      "marketDemand": 2,
+      "sumDemand": 1,
+      "workShopCount": 1,
+      "requiredWorkerCount": 1,
+      "tradeRevenue": 1,
+      "workerWage": 1,
+      "propertyTax": 1,
+      "workshopRunningCost": 1,
+      "expense": 1,
+      "profit": 1
+    }
+  }
+}
