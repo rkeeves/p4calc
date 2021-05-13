@@ -15,10 +15,10 @@ public class EconomyDTO {
     /**
      * -- GETTER --
      * Returns the object describing the parameters of the economy.
-     * @return economy parameters object
+     * @return {@code EconomyParametersDTO} object
      * -- SETTER --
      * Changes the object describing the parameters of the economy.
-     * @param economyParameters new economy parameters object
+     * @param economyParameters new {@code EconomyParametersDTO} object
      */
     @Getter
     @Setter
@@ -26,11 +26,11 @@ public class EconomyDTO {
 
     /**
      * -- GETTER --
-     * Returns a list of all products.
-     * @return list of products
+     * Returns a list of all {@code ProductDTO}s.
+     * @return list of {@code ProductDTO}s
      * -- SETTER --
      * Changes all the products of an economy.
-     * @param products new list of products
+     * @param products a new list of {@code ProductDTO}s
      */
     @Getter
     @Setter
