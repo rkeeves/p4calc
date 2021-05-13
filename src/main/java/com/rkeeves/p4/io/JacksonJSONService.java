@@ -8,8 +8,8 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import java.io.*;
 
 /**
- * Jackson based JSONService implementation.
- * Provides method for read/write operations for JSON data.
+ * Jackson based {@code JSONService} implementation.
+ * Provides method for read/write operations for {@code JSON} data.
  */
 public class JacksonJSONService implements JSONService{
 
@@ -19,7 +19,7 @@ public class JacksonJSONService implements JSONService{
      * This method reads a resource file - given by the user supplied resource name -
      * and returns an object of the user given type populated with data based on the JSON file.
      *
-     * @param resourceName the name of the resource to process
+     * @param resourceName the name of the {@code Resource} to process
      * @param cls class object of the constructible object's type
      * @param <T> the constructible object's type
      * @return the constructed and populated object
@@ -32,7 +32,7 @@ public class JacksonJSONService implements JSONService{
 
     /**
      * This method reads a file - given by the user supplied file object -
-     * and returns an object of the user given type populated with data based on the JSON file.
+     * and returns an object of the user given type populated with data based on the {@code JSON} file.
      *
      * @param file the file to process
      * @param cls class object of the constructible object's type
@@ -68,7 +68,7 @@ public class JacksonJSONService implements JSONService{
     }
 
     /**
-     * Writes to a user given file JSON formatted data, based on the object given by the user.
+     * Writes to a user given file {@code JSON} formatted data, based on the object given by the user.
      *
      * @param file the file to write
      * @param object the object to write
