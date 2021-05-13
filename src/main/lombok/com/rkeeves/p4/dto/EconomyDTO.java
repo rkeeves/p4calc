@@ -13,6 +13,13 @@ import java.util.List;
 public class EconomyDTO {
 
     /**
+     * Creates a new instance of {@code EconomyDTO}.
+     */
+    public EconomyDTO(){
+
+    }
+
+    /**
      * -- GETTER --
      * Returns the object describing the parameters of the economy.
      * @return {@code EconomyParametersDTO} object
