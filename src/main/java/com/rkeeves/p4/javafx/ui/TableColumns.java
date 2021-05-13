@@ -11,7 +11,7 @@ import javafx.util.StringConverter;
 import java.util.function.Function;
 
 /**
- * A static helper class to modify JavaFX table columns to facilitate binding to properties.
+ * A static helper class to modify {@code JavaFX} {@code TableColumn} to facilitate binding to properties.
  */
 public class TableColumns {
 
@@ -20,11 +20,11 @@ public class TableColumns {
     private static final StringConverter<Number> nullableDoubleConverter = NullableStringConverter.convertToNumber(NullableStringConverter.forDouble());
 
     /**
-     * Sets up a table column to automatically populate itself with read only cells,
-     * if the table is given objects of type O.
-     * The column can be set up for all instance fields which are properties.
+     * Sets up a {@code TableColumn} to automatically populate itself with read only {@code TableCell}s,
+     * if the {@code TableView} is given objects of type O.
+     * The {@code TableColumn} can be set up for all instance fields which are {@code Property}s.
      *
-     * @param column the modifiable column
+     * @param column the modifiable {@code TableColumn}
      * @param getter the field's getter
      * @param <O> the instance's type
      * @param <T> the instance field's type
@@ -37,11 +37,11 @@ public class TableColumns {
     }
 
     /**
-     * Sets up a table column to automatically populate itself with read only cells,
-     * if the table is given objects of type O.
-     * The column can be set up for all instance fields which are number expressions.
+     * Sets up a {@code TableColumn} to automatically populate itself with read only {@code TableCell}s,
+     * if the {@code TableView} is given objects of type O.
+     * The {@code TableColumn} can be set up for all instance fields which are {@code NumberExpression}s.
      *
-     * @param column the modifiable column
+     * @param column the modifiable {@code TableColumn}
      * @param getter the field's getter
      * @param <O> the instance's type
      */
@@ -52,12 +52,12 @@ public class TableColumns {
     }
 
     /**
-     * Sets up a table column to automatically populate itself with editable text fields,
-     * if the table is given objects of type O.
-     * The column can be set up for all instance fields which are of type DoubleProperty.
+     * Sets up a {@code TableColumn} to automatically populate itself with editable {@code TextField}s,
+     * if the {@code TableView} is given objects of type O.
+     * The {@code TableColumn} can be set up for all instance fields which are of type {@code DoubleProperty}.
      *
-     * @param column the modifiable column
-     * @param getter a getter for a DoubleProperty type field of the object
+     * @param column the modifiable {@code TableColumn}
+     * @param getter a getter for a {@code DoubleProperty} type field of the object
      * @param <O> the instance's type
      */
     public static <O> void editableColumnForDouble(TableColumn<O, Number> column, Function<O, DoubleProperty> getter) {
@@ -65,12 +65,12 @@ public class TableColumns {
     }
 
     /**
-     * Sets up a table column to automatically populate itself with editable text fields,
-     * if the table is given objects of type O.
-     * The column can be set up for all instance fields which are of type IntegerProperty.
+     * Sets up a {@code TableColumn} to automatically populate itself with editable {@code TextField}s,
+     * if the {@code TableView} is given objects of type O.
+     * The {@code TableColumn} can be set up for all instance fields which are of type {@code IntegerProperty}.
      *
-     * @param column the modifiable column
-     * @param getter a getter for an IntegerProperty type field of the object
+     * @param column the modifiable {@code TableColumn}
+     * @param getter a getter for an {@code IntegerProperty} type field of the object
      * @param <O> the instance's type
      */
     public static <O> void editableColumnForInteger(TableColumn<O, Number> column,
