@@ -5,9 +5,9 @@ import javafx.util.StringConverter;
 import java.util.function.Function;
 
 /**
- * A generic type from/to string converter to work with JavaFX's API.
+ * A generic type from/to string converter to work with {@code JavaFX}'s API.
  *
- * @param <T> type to be converted from/to String
+ * @param <T> type to be converted from/to {@code String}
  */
 public class NullableStringConverter<T> extends StringConverter<T> {
 
@@ -16,7 +16,7 @@ public class NullableStringConverter<T> extends StringConverter<T> {
     private final Function<T,String> toString;
 
     /**
-     * Cosntructs a string converter object given to mapping functions.
+     * Cosntructs a {@code NullableStringConverter} object given to mapping functions.
      *
      * @param fromString mapper which can create instances of user given based on a string
      * @param toString mapper which can create string based on user given type's instances
@@ -27,7 +27,7 @@ public class NullableStringConverter<T> extends StringConverter<T> {
     }
 
     /**
-     * Creates a converter instance for integers.
+     * Creates a {@code StringConverter} instance for integers.
      *
      * @return converter
      */
@@ -36,7 +36,7 @@ public class NullableStringConverter<T> extends StringConverter<T> {
     }
 
     /**
-     * Creates a converter instance for doubles.
+     * Creates a {@code StringConverter} instance for doubles.
      *
      * @return converter
      */
@@ -45,9 +45,9 @@ public class NullableStringConverter<T> extends StringConverter<T> {
     }
 
     /**
-     * Given any converter whose generic type parameter extends number returns the same converter,
+     * Given any {@code StringConverter} whose generic type parameter extends number returns the same converter,
      * but casted to use Number as the generic type parameter.
-     * Due to JavaFX's API, sometimes it is necessary to cast.
+     * Due to {@code JavaFX}'s API, sometimes it is necessary to cast.
      * At least this way it is centralized where the bad C-style casting happens.
      *
      * @param baseConverter converter to cast
