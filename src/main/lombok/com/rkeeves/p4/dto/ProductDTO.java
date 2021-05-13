@@ -12,6 +12,12 @@ import java.util.Map;
 public class ProductDTO {
 
     /**
+     * Creates a new instance of {@code ProductDTO}.
+     */
+    public ProductDTO() {
+    }
+
+    /**
      * -- GETTER --
      * Returns the name of the {@code ProductDTO}.
      *
@@ -45,7 +51,7 @@ public class ProductDTO {
      *
      * @return market demand fulfillment ratio
      * -- SETTER --
-     * Changes the percentage ratio of market demand fulfillment
+     * Changes the percentage ratio of market demand fulfillment.
      *
      * @param marketDemandFulfillmentRatio new market demand fulfillment ratio
      */
