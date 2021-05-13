@@ -4,30 +4,25 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DefaultStyleSheetService implements StyleSheetService{
 
-    private static final String baseCSS = resourceExternalForm("/css/base.css");
-
-    private static final String lightCSS = resourceExternalForm("/css/light-theme.css");
+    private final List<StyleSheetsChangeListener> listeners = new ArrayList<>();
 
     @Getter
-    private ObservableList<String> styleSheets = FXCollections.observableArrayList(baseCSS);
+    private final ObservableList<String> styleSheets =  FXCollections.observableArrayList();
 
-    private static String resourceExternalForm(String resourceName){
-        return DefaultStyleSheetService.class.getResource(resourceName).toExternalForm();
+    @Override
+    public void addListener(StyleSheetsChangeListener listener) {
+        listeners.add(listener);
     }
 
     @Override
-    public void changeThemeToDefault() {
-        if(styleSheets.contains(lightCSS)){
-            styleSheets.remove(lightCSS);
-        }
-    }
-
-    @Override
-    public void changeThemeToLight() {
-        if(!styleSheets.contains(lightCSS)){
-            styleSheets.add(lightCSS);
-        }
+    public void setStyleSheets(List<String> newStyleSheets) {
+        styleSheets.clear();
+        styleSheets.addAll(newStyleSheets);
+        listeners.forEach(listener->listener.onStyleSheetsChange(styleSheets));
     }
 }
