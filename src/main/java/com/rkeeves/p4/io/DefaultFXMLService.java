@@ -6,7 +6,7 @@ import javafx.scene.Node;
 import java.io.IOException;
 
 /**
- * Default implementation of an FXMLService.
+ * Default implementation of an {@code FXMLService}.
  */
 public class DefaultFXMLService implements FXMLService {
 
