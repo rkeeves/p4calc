@@ -12,7 +12,7 @@ public class ExpressionVectorAdapter<T extends NumberExpression> implements Expr
     private final T[] array;
 
     /**
-     * Constructs a read-only expression vector adapter based on the given array.
+     * Constructs a read-only {@code ExpressionVector} adapter based on the given array.
      *
      * @param array user given array
      */
