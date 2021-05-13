@@ -15,7 +15,7 @@ public interface EconomyModel {
     EconomyParametersModel getEconomyParametersModel();
 
     /**
-     * Returns a list of all products' models.
+     * Returns a list of all {@code ProductModel}s.
      *
      * @return list of product models
      */
