@@ -8,6 +8,13 @@ import lombok.Data;
 @Data
 public class EconomyParametersDTO {
 
+
+    /**
+     * Creates a new instance of {@code EconomyParametersDTO}.
+     */
+    public EconomyParametersDTO() {
+    }
+
     /**
      * -- GETTER --
      * Returns the ratio of unit conversion between kilograms and barrels.
