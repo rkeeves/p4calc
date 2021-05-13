@@ -16,6 +16,7 @@ public class ExpressionSquareMatrices {
 
     /**
      * Returns a fully populated matrix of "size" rows and "size" columns.
+     * All {@code DoubleProperty} elements are initiallized and are given 0.0 as default value.
      *
      * @param size the amount of rows and colummns in the square matrix
      * @return square matrix
@@ -32,7 +33,7 @@ public class ExpressionSquareMatrices {
     }
 
     /**
-     * Returns the result of a matrix vector multiplication as an expression vector.
+     * Returns the result of a matrix vector multiplication as an {@code ExpressionVector}.
      *
      * @param symmetricMatrix matrix to multiply with
      * @param vector vector to multiply
