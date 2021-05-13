@@ -5,7 +5,7 @@ import com.rkeeves.p4.dto.EconomyDTO;
 /**
  * This service is responsible for providing {@code EconomyModel} for the user.
  */
-public interface EconomyModelService {
+public interface EconomyModelCreatorService {
 
     /**
      * Based on the economy model dto given by a user, provides a {@code Property}-based model of the economy.
