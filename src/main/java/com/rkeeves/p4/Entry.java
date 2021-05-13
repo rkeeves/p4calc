@@ -3,7 +3,7 @@ package com.rkeeves.p4;
 import javafx.application.Application;
 
 /**
- * This entry provides the entry point to the program.
+ * This entity provides the entry point to the program.
  */
 public class Entry {
 
