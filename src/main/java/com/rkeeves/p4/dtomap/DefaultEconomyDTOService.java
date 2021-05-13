@@ -4,7 +4,7 @@ import com.rkeeves.p4.dto.EconomyDTO;
 import com.rkeeves.p4.model.EconomyModel;
 
 /**
- * This entity is a default implementation of a service which transforms economy models into dtos.
+ * This entity is a default implementation of a service which transforms economy models into {@code Data Transfer Object}s.
  */
 public class DefaultEconomyDTOService implements EconomyDTOService{
 
