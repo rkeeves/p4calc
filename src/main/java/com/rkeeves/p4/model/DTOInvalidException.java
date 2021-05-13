@@ -1,7 +1,7 @@
 package com.rkeeves.p4.model;
 
 /**
- * This Exception represents the invalidity of Data Transfer Objects.
+ * This {@code Data Exception} represents the invalidity of {@code Data Transfer Object}s.
  */
 public class DTOInvalidException extends Exception{
 
