@@ -6,7 +6,6 @@ import javafx.beans.binding.NumberExpression;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
-import javafx.util.Pair;
 
 import java.util.function.Function;
 
@@ -37,11 +36,10 @@ public class FinanceChartController implements Wireable<EconomyModel>{
         var dataList = series.getData();
         model.getProductModels()
                 .stream()
-                .map(product-> new Pair<>(product.getNameProperty(), propertyGetter.apply(product)))
-                .map(both->{
+                .map(product->{
                     var data = new XYChart.Data<String,Number>();
-                    data.XValueProperty().bind(both.getKey());
-                    data.YValueProperty().bind(both.getValue());
+                    data.XValueProperty().bind(product.getNameProperty());
+                    data.YValueProperty().bind(propertyGetter.apply(product));
                     return data;
                 })
                 .forEachOrdered(dataList::add);
