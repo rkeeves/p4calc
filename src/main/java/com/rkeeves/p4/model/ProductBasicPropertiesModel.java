@@ -6,6 +6,7 @@ import javafx.beans.property.StringProperty;
 
 /**
  * This entity provides access to all non-derived properties of a given product.
+ * These derived attributes are modelled using {@code JavaFX}'s {@code Property} based change listening mechanism.
  */
 public interface ProductBasicPropertiesModel {
 
