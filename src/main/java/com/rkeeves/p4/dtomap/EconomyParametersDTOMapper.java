@@ -4,7 +4,7 @@ import com.rkeeves.p4.dto.EconomyParametersDTO;
 import com.rkeeves.p4.model.EconomyParametersModel;
 
 /**
- * This entity is the default implementation of an economy parameters model to dto mapper.
+ * This entity is the default implementation of an economy parameters model to {@code Data Transfer Object} mapper.
  */
 public class EconomyParametersDTOMapper implements DTOMapper<EconomyParametersModel, EconomyParametersDTO> {
 
