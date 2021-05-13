@@ -30,7 +30,7 @@ public class MathBindings {
     }
 
     /**
-     * A simple binding fot java.lang.Math.ceil.
+     * A simple binding for {@code java.lang.Math.ceil}.
      * @param value expression to ceil
      * @return binding
      */
@@ -39,7 +39,7 @@ public class MathBindings {
     }
 
     /**
-     * A simple binding fot java.lang.Math.floor.
+     * A simple binding for {@code java.lang.Math.floor}.
      * @param value expression to floor
      * @return binding
      */
