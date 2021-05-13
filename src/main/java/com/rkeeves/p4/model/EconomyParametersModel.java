@@ -5,6 +5,7 @@ import javafx.beans.property.IntegerProperty;
 
 /**
  * This entity provides access to all global parameters related to economy calculations.
+ * These parameters are modelled using {@code JavaFX}'s {@code Property} based change listening mechanism.
  */
 public interface EconomyParametersModel {
 
