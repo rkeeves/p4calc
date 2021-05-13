@@ -1,4 +1,4 @@
 /**
- * Provides simple POJO Data Transfer Objects(DTO) so clients don't directly rely on javafx.
+ * Provides simple {@code POJO} {@code Data Transfer Object}s ({@code DTO}s) so clients don't directly rely on {@code JavaFX}.
  */
 package com.rkeeves.p4.dto;
