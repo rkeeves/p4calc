@@ -11,7 +11,7 @@ import javafx.util.converter.IntegerStringConverter;
 import java.util.function.UnaryOperator;
 
 /**
- * A static helper class to modify JavaFX text fields to facilitate binding to properties.
+ * A static helper class to modify {@code sJavaFX} text fields to facilitate binding to {@code Property}s.
  */
 public class TextFields {
 
@@ -40,10 +40,10 @@ public class TextFields {
     private static final StringConverter<? extends Number> doubleConverter = new DoubleStringConverter();
 
     /**
-     * Binds an integer property bidirectionally to a text field.
+     * Binds an {@code IntegerProperty} bidirectionally to a {@code TextField}'s {@code textProperty}.
      *
-     * @param textField whose string property is about to be bound to
-     * @param integerProperty the property to base the binding on
+     * @param textField whose {@code textProperty} is about to be bound to
+     * @param integerProperty the {@code IntegerProperty} instance to base the binding on
      */
     public static void bindBidirectional(TextField textField, IntegerProperty integerProperty){
         textField.setTextFormatter(new TextFormatter<>(intFilter));
@@ -51,10 +51,10 @@ public class TextFields {
     }
 
     /**
-     * Binds a double property bidirectionally to a text field.
+     * Binds an {@code DoubleProperty} bidirectionally to a {@code TextField}'s {@code textProperty}.
      *
-     * @param textField whose string property is about to be bound to
-     * @param doubleProperty the property to base the binding on
+     * @param textField whose {@code textProperty} is about to be bound to
+     * @param doubleProperty the {@code DoubleProperty} instance to base the binding on
      */
     public static void bindBidirectional(TextField textField, DoubleProperty doubleProperty){
         textField.setTextFormatter(new TextFormatter<>(doubleFilter));
