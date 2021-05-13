@@ -13,7 +13,7 @@ Use the commands below to jar creation and running it on a 15+ Java VM.
 
 ```
 mvn package
-java -jar /target/p4calc-1.0-SNAPSHOT.jar
+java -jar ./target/p4calc-1.0-SNAPSHOT.jar
 ```
 
 ## Site
