@@ -7,6 +7,7 @@ import java.util.Optional;
 
 /**
  * This entity represents a product's ability to supply information about its ingredients.
+ * The different ingredients' quantities were modelled using {@code JavaFX}'s {@code NumberExpression} based change listening mechanism.
  */
 public interface ProductIngredientsModel {
 
