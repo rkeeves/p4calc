@@ -10,7 +10,7 @@
     <name>pat4 calculator</name>
     <description>A basic calculator application for Patrician 4.</description>
     <packaging>jar</packaging>
-    
+
     <developers>
         <developer>
             <id>rkeeves</id>
@@ -20,6 +20,10 @@
             <organizationUrl>https://inf.unideb.hu/</organizationUrl>
         </developer>
     </developers>
+
+    <scm>
+        <developerConnection>scm:git:https://github.com/rkeeves/p4calc.git</developerConnection>
+    </scm>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
