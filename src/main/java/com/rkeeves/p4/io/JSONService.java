@@ -3,13 +3,13 @@ package com.rkeeves.p4.io;
 import java.io.File;
 
 /**
- * This service provides a generic way for reading/writing objects to JSON.
+ * This service provides a generic way for reading/writing objects to {@code JSON}.
  */
 public interface JSONService {
 
     /**
      * This method reads a resource file - given by the user supplied resource name -
-     * and returns an object of the user given type populated with data based on the JSON file.
+     * and returns an object of the user given type populated with data based on the {@code JSON} file.
      *
      * @param resourceName the name of the resource to process
      * @param cls class object of the constructible object's type
@@ -21,7 +21,7 @@ public interface JSONService {
 
     /**
      * This method reads a file - given by the user supplied file object -
-     * and returns an object of the user given type populated with data based on the JSON file.
+     * and returns an object of the user given type populated with data based on the {@code JSON} file.
      *
      * @param file the file to process
      * @param cls class object of the constructible object's type
@@ -32,7 +32,7 @@ public interface JSONService {
     <T> T readFromFile(File file, Class<T> cls) throws JSONReadFailedException;
 
     /**
-     * Writes to a user given file JSON formatted data, based on the object given by the user.
+     * Writes to a user given file {@code JSON} formatted data, based on the object given by the user.
      *
      * @param file the file to write
      * @param object the object to write
