@@ -14,7 +14,7 @@ public interface MutableProductDemandModel extends ProductDemandModel{
      * The products are not independent of each other
      * because a workshop of one product type can use other products as ingredients.
      *
-     * @param sumDemandExpression
+     * @param sumDemandExpression an already setup {@code NumberExpression} to bind to
      */
     void bindSumDemandExpression(NumberExpression sumDemandExpression);
 }
