@@ -9,7 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <name>pat4 calculator</name>
     <description>A basic calculator application for Patrician 4.</description>
-
+    <packaging>jar</packaging>
+    
     <developers>
         <developer>
             <id>rkeeves</id>
