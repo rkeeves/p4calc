@@ -5,15 +5,15 @@ import com.rkeeves.p4.model.EconomyModel;
 import com.rkeeves.p4.model.EconomyModelService;
 
 /**
- * Default implementation of EconomyModel service.
+ * Default implementation of {@code EconomyModelService}.
  */
-public class DefaultEconomyModelService implements EconomyModelService {
+public class DefaultEconomyModelService implements EconomyModelService{
 
     /**
-     * This method constructs a JavaFX model object from the user supplied DTO.
+     * This method constructs a model object from the user supplied {@code Data Transfer Object}.
      * The model implements all business rules of the economy.
      *
-     * @param dto the Data Transfer Object representing the economy
+     * @param dto the {@code Data Transfer Object} representing the economy
      * @return model implementing the rules of the economy
      */
     public EconomyModel create(EconomyDTO dto){
