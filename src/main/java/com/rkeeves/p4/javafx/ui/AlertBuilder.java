@@ -9,7 +9,7 @@ import javafx.stage.StageStyle;
 import java.util.List;
 
 /**
- * A simple builder class to construct JavaFX alerts.
+ * A simple builder class to construct {@code JavaFX Alert}s.
  */
 public class AlertBuilder {
 
@@ -30,7 +30,7 @@ public class AlertBuilder {
     }
 
     /**
-     * Returns a builder instance.
+     * Returns an {@code AlertBuilder} instance.
      *
      * @return builder
      */
@@ -105,9 +105,9 @@ public class AlertBuilder {
     }
 
     /**
-     * Constructs a new alert object.
+     * Constructs a new {@code Alert} object.
      *
-     * @return alert isntance
+     * @return alert instance
      */
     public Alert build(){
         var alert = new Alert(alertType);
