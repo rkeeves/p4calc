@@ -3,7 +3,8 @@ package com.rkeeves.p4.model;
 import javafx.beans.binding.NumberExpression;
 
 /**
- * This entity provides access to all derived properties related to owned assets for a given product.
+ * This entity provides access to all derived attributes related to owned assets for a given product.
+ * These derived attributes are modelled using {@code JavaFX}'s {@code NumberExpression} based change listening mechanism.
  */
 public interface ProductAssetModel {
 
