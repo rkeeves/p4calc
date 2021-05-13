@@ -4,22 +4,22 @@ import javafx.beans.binding.NumberExpression;
 
 
 /**
- * Represents an expression vector whose elements can be read.
+ * An {@code ExpressionVector} a vector whose elements are {@code NumberExpression}s.
  */
 public interface ExpressionVector {
 
     /**
-     * Returns the size of the expression vector.
+     * Returns the size of the {@code ExpressionVector}.
      *
-     * @return size of the expression vector
+     * @return size of the {@code ExpressionVector}
      */
     int size();
 
     /**
-     * Returns the expression at the user given index.
+     * Returns the {@code NumberExpression} at the user given index.
      *
      * @param index the index of the queried element
-     * @return expression at the user given index
+     * @return {@code NumberExpression} at the user given index
      */
     NumberExpression get(int index);
 }
