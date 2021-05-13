@@ -3,7 +3,7 @@ package com.rkeeves.p4.javafx;
 import javafx.beans.binding.NumberExpression;
 
 /**
- * This entity represents a square matrix whose elements are NumberExpressions.
+ * This entity represents a square matrix whose elements are {@code NumberExpression}s.
  */
 public interface ExpressionSquareMatrix {
 
@@ -15,7 +15,7 @@ public interface ExpressionSquareMatrix {
     int size();
 
     /**
-     * Returns the element from at the user given row and column.
+     * Returns the {@code NumberExpression} from at the user given row and column.
      *
      * @param row row of the selected element
      * @param col column of the selected element
