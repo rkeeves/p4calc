@@ -16,7 +16,7 @@ import javafx.beans.property.DoubleProperty;
 public interface LowerTriangleMatrix {
 
     /**
-     * Returns the double property representing how many ingredients are needed.
+     * Returns the {@code DoubleProperty} representing how many ingredients are needed.
      *
      * @param row - row index
      * @param col - column index
