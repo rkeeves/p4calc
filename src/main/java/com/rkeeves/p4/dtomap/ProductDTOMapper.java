@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 
 /**
- * This entity is the default implementation of an product model to dto mapper.
+ * This entity is the default implementation of a {@code ProductModel} to {@code ProductDTO} mapper.
  */
 public class ProductDTOMapper implements DTOMapper<ProductModel, ProductDTO> {
 
