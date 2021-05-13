@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import org.tinylog.Logger;
 
 /**
- * This entity is the JavaFX GUI Application itself.
+ * This entity is the {@code JavaFX} {@code Application} itself.
  */
 public class CalculatorApplication extends Application {
 
@@ -32,7 +32,7 @@ public class CalculatorApplication extends Application {
     private FileChooserController fileChooserController;
 
     /**
-     * This method gets called after an CalculatorApplication instance is constructed.
+     * This method gets called after an {@code CalculatorApplication} instance is constructed.
      * This serves as a way to setup dependencies.
      */
     @Override
@@ -48,7 +48,7 @@ public class CalculatorApplication extends Application {
     }
 
     /**
-     * This method gets called by JavaFX when the primary stage is ready.
+     * This method gets called by {@code JavaFX} when the primary stage is ready.
      *
      * @param stage primary stage
      */
@@ -74,7 +74,7 @@ public class CalculatorApplication extends Application {
     }
 
     /**
-     * Called after Platform exit was called explicitly or all managed windows were closed.
+     * Called after {@code Platform.exit()} was called explicitly or all managed windows were closed.
      * This method was overridden only to facilitate logging.
      *
      * @throws Exception
