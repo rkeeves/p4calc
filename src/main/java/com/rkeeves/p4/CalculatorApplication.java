@@ -5,6 +5,7 @@ import com.rkeeves.p4.dto.EconomyDTO;
 import com.rkeeves.p4.dtomap.DefaultEconomyDTOService;
 import com.rkeeves.p4.io.*;
 import com.rkeeves.p4.model.impl.DefaultEconomyModelCreatorService;
+import com.rkeeves.p4.validation.DefaultEconomyDTOValidatorService;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -68,7 +69,7 @@ public class CalculatorApplication extends Application {
         }
         fxmlService = new DefaultFXMLService();
         styleSheetService = new DefaultStyleSheetService();
-        var economyModelService = new DefaultEconomyModelCreatorService();
+        var economyModelService = new DefaultEconomyModelCreatorService(new DefaultEconomyDTOValidatorService());
         var economyDTOService = new DefaultEconomyDTOService();
         var alertController = new AlertController(styleSheetService);
         var fileChooserController = new FileChooserController();
