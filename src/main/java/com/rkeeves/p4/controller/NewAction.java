@@ -37,7 +37,7 @@ public class NewAction implements Runnable{
 
     private void onDTOTransformToModelFailed(DTOInvalidException e) {
         Logger.error(e,"Transforming DTO to model failed");
-        alertController.showOkOnlyAlert("JSON Semantic Error","The json data contained semantic errors");
+        alertController.showOkOnlyAlert("JSON Semantic Error",e.getMessage());
     }
 
     private void onModelResetSuccess() {
