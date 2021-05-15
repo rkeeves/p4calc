@@ -32,7 +32,7 @@
         <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
         <jackson.version>2.12.2</jackson.version>
         <tinylog.version>2.3.0</tinylog.version>
-        <mainClass>com.rkeeves.p4.Entry</mainClass>
+        <exec.mainClass>com.rkeeves.p4.Entry</exec.mainClass>
         <junit.jupiter.version>5.7.1</junit.jupiter.version>
         <jacoco.version>0.8.6</jacoco.version>
         <lombok.version>1.18.20</lombok.version>
@@ -125,7 +125,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.6</version>
                 <configuration>
-                    <mainClass>${mainClass}</mainClass>
+                    <mainClass>${exec.mainClass}</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -140,7 +140,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>${mainClass}</mainClass>
+                    <mainClass>${exec.mainClass}</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -179,7 +179,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>${mainClass}</mainClass>
+                                    <mainClass>${exec.mainClass}</mainClass>
                                 </transformer>
                             </transformers>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
