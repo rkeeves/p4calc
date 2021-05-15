@@ -9,8 +9,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -39,16 +38,9 @@ class TestDefaultEconomyParametersModel {
     }
 
     private static Stream<Arguments> create_provideTestCases() throws JSONReadFailedException {
-        var testFolder = "/economyTestData";
-        var resources = List.of(testFolder + "/economyParametersDTO_00.json",
-                testFolder + "/economyParametersDTO_01.json",
-                testFolder + "/economyParametersDTO_02.json",
-                testFolder + "/economyParametersDTO_03.json");
-        var dtoList = new ArrayList<Arguments>();
-        for (var res : resources) {
-            var dto = jsonService.readFromResource(res, EconomyParametersDTO.class);
-            dtoList.add(Arguments.of(dto));
-        }
-        return dtoList.stream();
+        var dtoArray = jsonService.readFromResource("/economyTestData/economyParametersDTOList.json",
+                EconomyParametersDTO[].class);
+        return Arrays.stream(dtoArray)
+                .map(Arguments::of);
     }
 }

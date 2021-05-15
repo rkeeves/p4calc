@@ -1,0 +1,42 @@
+[
+  {
+    "globalMarketDemandMultiplier" :  1.1,
+    "kgPerBarrel" :  1000.0,
+    "consumerCount" :  1000,
+    "globalSellPriceFactor" :  1.75,
+    "workersPerWorkshop" :  25,
+    "wagePerWorker" :  6,
+    "fixedPropertyTax" :  40,
+    "fixedRunningCost" :  50
+  },
+  {
+    "globalMarketDemandMultiplier" :  1.2,
+    "kgPerBarrel" :  1100.0,
+    "consumerCount" :  1100,
+    "globalSellPriceFactor" :  1.8,
+    "workersPerWorkshop" : 50,
+    "wagePerWorker" :  12,
+    "fixedPropertyTax" :  80,
+    "fixedRunningCost" :  100
+  },
+  {
+    "globalMarketDemandMultiplier" :  0.9,
+    "kgPerBarrel" :  900.0,
+    "consumerCount" :  900,
+    "globalSellPriceFactor" :  1.6,
+    "workersPerWorkshop" :  15,
+    "wagePerWorker" :  3,
+    "fixedPropertyTax" :  4,
+    "fixedRunningCost" :  5
+  },
+  {
+    "globalMarketDemandMultiplier" :  0.11,
+    "kgPerBarrel" :  100.0,
+    "consumerCount" :  100,
+    "globalSellPriceFactor" :  0.175,
+    "workersPerWorkshop" :  3,
+    "wagePerWorker" :  1,
+    "fixedPropertyTax" :  4,
+    "fixedRunningCost" :  5
+  }
+]
