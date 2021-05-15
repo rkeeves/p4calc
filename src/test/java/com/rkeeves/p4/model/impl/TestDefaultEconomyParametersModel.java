@@ -1,15 +1,28 @@
 package com.rkeeves.p4.model.impl;
 
 import com.rkeeves.p4.dto.EconomyParametersDTO;
+import com.rkeeves.p4.io.JSONReadFailedException;
+import com.rkeeves.p4.io.JSONService;
+import com.rkeeves.p4.io.JacksonJSONService;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestDefaultEconomyParametersModel {
+
+    private static JSONService jsonService;
+
+    @BeforeAll
+    static void init(){
+        jsonService = new JacksonJSONService();
+    }
 
     @ParameterizedTest
     @MethodSource("create_provideTestCases")
@@ -25,20 +38,17 @@ class TestDefaultEconomyParametersModel {
         assertEquals(dto.getWorkersPerWorkshop(), model.getWorkersPerWorkshopProperty().get());
     }
 
-    private static Stream<Arguments> create_provideTestCases(){
-        var dtoA = new EconomyParametersDTO();
-        var dtoB = new EconomyParametersDTO();
-        dtoB.setConsumerCount(107);
-        dtoB.setFixedPropertyTax(1110);
-        dtoB.setFixedRunningCost(506);
-        dtoB.setGlobalMarketDemandMultiplier(665.5);
-        dtoB.setGlobalSellPriceFactor(70.8);
-        dtoB.setKgPerBarrel(11.2);
-        dtoB.setWagePerWorker(11);
-        dtoB.setWorkersPerWorkshop(56);
-        return Stream.of(
-                Arguments.of(dtoA),
-                Arguments.of(dtoB)
-        );
+    private static Stream<Arguments> create_provideTestCases() throws JSONReadFailedException {
+        var testFolder = "/economyTestData";
+        var resources = List.of(testFolder + "/economyParametersDTO_00.json",
+                testFolder + "/economyParametersDTO_01.json",
+                testFolder + "/economyParametersDTO_02.json",
+                testFolder + "/economyParametersDTO_03.json");
+        var dtoList = new ArrayList<Arguments>();
+        for (var res : resources) {
+            var dto = jsonService.readFromResource(res, EconomyParametersDTO.class);
+            dtoList.add(Arguments.of(dto));
+        }
+        return dtoList.stream();
     }
 }
