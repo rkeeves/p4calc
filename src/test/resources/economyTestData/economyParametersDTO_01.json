@@ -1,0 +1,10 @@
+{
+  "globalMarketDemandMultiplier" :  1.2,
+  "kgPerBarrel" :  1100.0,
+  "consumerCount" :  1100,
+  "globalSellPriceFactor" :  1.8,
+  "workersPerWorkshop" : 50,
+  "wagePerWorker" :  12,
+  "fixedPropertyTax" :  80,
+  "fixedRunningCost" :  100
+}
