@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestDefaultEconomyParametersModel {
 
-    private static final String TEST_CASE_ARRAY_RESOURCE_NAME = "/model/economyParameters/economyParametersDTOList.json";
+    private static final String TEST_CASE_ARRAY_RESOURCE_NAME = "/model/economyParameters/validEconomyParametersDTOArray.json";
 
     private static JSONService jsonService;
 
