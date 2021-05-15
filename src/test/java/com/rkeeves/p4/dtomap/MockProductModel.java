@@ -13,10 +13,6 @@ import java.util.Optional;
 @Data
 public class MockProductModel implements MutableProductModel {
 
-    private final IntegerProperty workshopCountProperty = new SimpleIntegerProperty();
-
-    private final IntegerProperty requiredWorkerCountProperty  = new SimpleIntegerProperty();
-
     private final StringProperty nameProperty  = new SimpleStringProperty("");
 
     private final IntegerProperty marketDemandFulfillmentRatioProperty = new SimpleIntegerProperty(100);
@@ -32,6 +28,10 @@ public class MockProductModel implements MutableProductModel {
     private final DoubleProperty marketDemandProperty = new SimpleDoubleProperty();
 
     private final DoubleProperty sumDemandProperty = new SimpleDoubleProperty();
+
+    private final IntegerProperty workshopCountProperty = new SimpleIntegerProperty();
+
+    private final IntegerProperty requiredWorkerCountProperty  = new SimpleIntegerProperty();
 
     private final DoubleProperty tradeRevenueProperty = new SimpleDoubleProperty();
 
