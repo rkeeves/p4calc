@@ -16,6 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestDefaultEconomyParametersModel {
 
+    private static final String TEST_CASE_ARRAY_RESOURCE_NAME = "/model/economyParameters/economyParametersDTOList.json";
+
     private static JSONService jsonService;
 
     @BeforeAll
@@ -38,7 +40,7 @@ class TestDefaultEconomyParametersModel {
     }
 
     private static Stream<Arguments> create_provideTestCases() throws JSONReadFailedException {
-        var dtoArray = jsonService.readFromResource("/economyTestData/economyParametersDTOList.json",
+        var dtoArray = jsonService.readFromResource(TEST_CASE_ARRAY_RESOURCE_NAME,
                 EconomyParametersDTO[].class);
         return Arrays.stream(dtoArray)
                 .map(Arguments::of);

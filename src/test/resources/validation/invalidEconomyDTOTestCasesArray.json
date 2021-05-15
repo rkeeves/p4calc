@@ -1,0 +1,131 @@
+[
+  {
+    "testCaseName" : "No economy parameters",
+    "economyDTO" : {
+      "products" : [ {
+        "name" : "",
+        "ingredients" : { },
+        "marketDemandFulfillmentRatio" : 100,
+        "baseDemandInKg" : 2.5,
+        "productionPerWorkshop" : 6.0,
+        "basePrice" : 33.0
+      }
+      ]
+    }
+  },
+  {
+    "testCaseName" : "Empty string as product name",
+    "economyDTO" : {
+      "economyParameters" : {
+        "kgPerBarrel" : 1900.0,
+        "globalMarketDemandMultiplier" : 1.0,
+        "consumerCount" : 10000,
+        "globalSellPriceFactor" : 1.75,
+        "workersPerWorkshop" : 25,
+        "wagePerWorker" : 6,
+        "fixedPropertyTax" : 40,
+        "fixedRunningCost" : 50
+      },
+      "products" : [ {
+        "name" : "",
+        "ingredients" : { },
+        "marketDemandFulfillmentRatio" : 100,
+        "baseDemandInKg" : 2.5,
+        "productionPerWorkshop" : 6.0,
+        "basePrice" : 33.0
+      }
+      ]
+    }
+  },
+  {
+    "testCaseName" : "Duplicate product names",
+    "economyDTO" : {
+      "economyParameters" : {
+        "kgPerBarrel" : 1900.0,
+        "globalMarketDemandMultiplier" : 1.0,
+        "consumerCount" : 10000,
+        "globalSellPriceFactor" : 1.75,
+        "workersPerWorkshop" : 25,
+        "wagePerWorker" : 6,
+        "fixedPropertyTax" : 40,
+        "fixedRunningCost" : 50
+      },
+      "products" : [
+        {
+        "name" : "A",
+        "ingredients" : {},
+        "marketDemandFulfillmentRatio" : 100,
+        "baseDemandInKg" : 5.0,
+        "productionPerWorkshop" : 6.0,
+        "basePrice" : 33.0
+      }, {
+        "name" : "A",
+        "ingredients" : {},
+        "marketDemandFulfillmentRatio" : 100,
+        "baseDemandInKg" : 5.0,
+        "productionPerWorkshop" : 6.0,
+        "basePrice" : 33.0
+      }
+      ]
+    }
+  },
+  {
+    "testCaseName" : "Product is ingredient of itself",
+    "economyDTO" : {
+      "economyParameters" : {
+        "kgPerBarrel" : 1900.0,
+        "globalMarketDemandMultiplier" : 1.0,
+        "consumerCount" : 10000,
+        "globalSellPriceFactor" : 1.75,
+        "workersPerWorkshop" : 25,
+        "wagePerWorker" : 6,
+        "fixedPropertyTax" : 40,
+        "fixedRunningCost" : 50
+      },
+      "products" : [
+        {
+          "name" : "A",
+          "ingredients" : {
+            "A" : 1.0
+          },
+          "marketDemandFulfillmentRatio" : 100,
+          "baseDemandInKg" : 5.0,
+          "productionPerWorkshop" : 6.0,
+          "basePrice" : 33.0
+        }
+      ]
+    }
+  },
+  {
+    "testCaseName" : "Product uses not yet defined ingredient",
+    "economyDTO" : {
+      "economyParameters" : {
+        "kgPerBarrel" : 1900.0,
+        "globalMarketDemandMultiplier" : 1.0,
+        "consumerCount" : 10000,
+        "globalSellPriceFactor" : 1.75,
+        "workersPerWorkshop" : 25,
+        "wagePerWorker" : 6,
+        "fixedPropertyTax" : 40,
+        "fixedRunningCost" : 50
+      },
+      "products" : [
+        {
+          "name" : "A",
+          "ingredients" : {"B" : 1.0},
+          "marketDemandFulfillmentRatio" : 100,
+          "baseDemandInKg" : 5.0,
+          "productionPerWorkshop" : 6.0,
+          "basePrice" : 33.0
+        }, {
+          "name" : "B",
+          "ingredients" : {},
+          "marketDemandFulfillmentRatio" : 100,
+          "baseDemandInKg" : 5.0,
+          "productionPerWorkshop" : 6.0,
+          "basePrice" : 33.0
+        }
+      ]
+    }
+  }
+]

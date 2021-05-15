@@ -1,17 +1,26 @@
 package com.rkeeves.p4.validation;
 
-import com.rkeeves.p4.dto.EconomyDTO;
 import com.rkeeves.p4.io.JSONReadFailedException;
 import com.rkeeves.p4.io.JSONService;
 import com.rkeeves.p4.io.JacksonJSONService;
 import com.rkeeves.p4.model.DTOInvalidException;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 
 class TestDefaultEconomyDTOValidatorService {
+
+    private static final String INVALID_TEST_CASE_ARRAY_RESOURCE_NAME = "/validation/invalidEconomyDTOTestCasesArray.json";
+
+    private static final String VALID_TEST_CASE_ARRAY_RESOURCE_NAME = "/validation/validEconomyDTOTestCasesArray.json";
+
     private static JSONService jsonService;
 
     private static EconomyDTOValidatorService validatorService;
@@ -22,55 +31,33 @@ class TestDefaultEconomyDTOValidatorService {
         validatorService = new DefaultEconomyDTOValidatorService();
     }
 
-    @Test
-    void validate_WhenProductNameIsEmptyString_Throw(){
-        try {
-            var dto = jsonService.readFromResource("/economyTestData/error_empty_string_product_name.json", EconomyDTO.class);
-            assertThrows(DTOInvalidException.class,()->validatorService.validate(dto));
-        } catch (JSONReadFailedException e) {
-            fail("Wasn't able to load test data",e);
-        }
+    @ParameterizedTest
+    @MethodSource("validate_ProvideInvalidTestCases")
+    void validate_GivenInvalidDTO_Throws(EconomyDTOTestCase dtoTestCase){
+        assertThrows(DTOInvalidException.class,
+                ()->validatorService.validate(dtoTestCase.getEconomyDTO()),
+                dtoTestCase.getTestCaseName());
     }
 
-    @Test
-    void validate_WhenProductNamesNotUnique_Throw(){
-        try {
-            var dto = jsonService.readFromResource("/economyTestData/error_duplicate_names.json", EconomyDTO.class);
-            assertThrows(DTOInvalidException.class,()->validatorService.validate(dto));
-        } catch (JSONReadFailedException e) {
-            fail("Wasn't able to load test data",e);
-        }
+    @ParameterizedTest
+    @MethodSource("validate_ProvideValidTestCases")
+    void validate_GivenValidDTO_DoesNotThrow(EconomyDTOTestCase dtoTestCase){
+        assertDoesNotThrow(()->validatorService.validate(dtoTestCase.getEconomyDTO()),
+                dtoTestCase.getTestCaseName());
     }
 
-    @Test
-    void validate_WhenProductIsIngredientOfItself_Throw(){
-        try {
-            var dto = jsonService.readFromResource("/economyTestData/error_ingredient_of_itself.json", EconomyDTO.class);
-            assertThrows(DTOInvalidException.class,()->validatorService.validate(dto));
-        } catch (JSONReadFailedException e) {
-            fail("Wasn't able to load test data",e);
-        }
+    private static Stream<Arguments> validate_ProvideInvalidTestCases() throws JSONReadFailedException {
+        return provideTestCases(INVALID_TEST_CASE_ARRAY_RESOURCE_NAME);
     }
 
-    @Test
-    void validate_WhenIngredientIsNotYetDefined_Throw(){
-        try {
-            var dto = jsonService.readFromResource("/economyTestData/error_uses_not_yet_defined_as_ingredient.json", EconomyDTO.class);
-            assertThrows(DTOInvalidException.class,()->validatorService.validate(dto));
-        } catch (JSONReadFailedException e) {
-            fail("Wasn't able to load test data",e);
-        }
+    private static Stream<Arguments> validate_ProvideValidTestCases() throws JSONReadFailedException {
+        return provideTestCases(VALID_TEST_CASE_ARRAY_RESOURCE_NAME);
     }
 
-    @Test
-    void validate_WhenDTOIsValid_DoNotThrow(){
-        try {
-            var dto = jsonService.readFromResource("/economyTestData/valid.json", EconomyDTO.class);
-            validatorService.validate(dto);
-        } catch (JSONReadFailedException e) {
-            fail("Wasn't able to load test data",e);
-        } catch (DTOInvalidException e){
-            fail("Should not throw",e);
-        }
+    private static Stream<Arguments> provideTestCases(String resourceName) throws JSONReadFailedException {
+        var dtoArray = jsonService.readFromResource(resourceName,
+                EconomyDTOTestCase[].class);
+        return Arrays.stream(dtoArray)
+                .map(Arguments::of);
     }
 }

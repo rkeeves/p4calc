@@ -1,0 +1,117 @@
+[
+  {
+    "testCaseName": "Zero products",
+    "economyDTO" : {
+      "economyParameters" : {
+        "kgPerBarrel" : 1900.0,
+        "globalMarketDemandMultiplier" : 1.0,
+        "consumerCount" : 10000,
+        "globalSellPriceFactor" : 1.75,
+        "workersPerWorkshop" : 25,
+        "wagePerWorker" : 6,
+        "fixedPropertyTax" : 40,
+        "fixedRunningCost" : 50
+      },
+      "products" : []
+    }
+  },
+  {
+    "testCaseName": "One product",
+    "economyDTO" : {
+      "economyParameters" : {
+        "kgPerBarrel" : 1900.0,
+        "globalMarketDemandMultiplier" : 1.0,
+        "consumerCount" : 10000,
+        "globalSellPriceFactor" : 1.75,
+        "workersPerWorkshop" : 25,
+        "wagePerWorker" : 6,
+        "fixedPropertyTax" : 40,
+        "fixedRunningCost" : 50
+      },
+      "products" : [
+        {
+          "name" : "A",
+          "ingredients" : { },
+          "marketDemandFulfillmentRatio" : 100,
+          "baseDemandInKg" : 2.5,
+          "productionPerWorkshop" : 6.0,
+          "basePrice" : 33.0
+        }
+      ]
+    }
+  },
+  {
+    "testCaseName": "Two products",
+    "economyDTO" : {
+      "economyParameters" : {
+        "kgPerBarrel" : 1900.0,
+        "globalMarketDemandMultiplier" : 1.0,
+        "consumerCount" : 10000,
+        "globalSellPriceFactor" : 1.75,
+        "workersPerWorkshop" : 25,
+        "wagePerWorker" : 6,
+        "fixedPropertyTax" : 40,
+        "fixedRunningCost" : 50
+      },
+      "products" : [
+        {
+          "name" : "A",
+          "ingredients" : { },
+          "marketDemandFulfillmentRatio" : 100,
+          "baseDemandInKg" : 2.5,
+          "productionPerWorkshop" : 6.0,
+          "basePrice" : 33.0
+        },
+        {
+          "name" : "B",
+          "ingredients" : { "A" : 1.0 },
+          "marketDemandFulfillmentRatio" : 100,
+          "baseDemandInKg" : 2.5,
+          "productionPerWorkshop" : 6.0,
+          "basePrice" : 33.0
+        }
+      ]
+    }
+  }, {
+    "testCaseName": "Three products",
+    "economyDTO" : {
+      "economyParameters" : {
+        "kgPerBarrel" : 1900.0,
+        "globalMarketDemandMultiplier" : 1.0,
+        "consumerCount" : 10000,
+        "globalSellPriceFactor" : 1.75,
+        "workersPerWorkshop" : 25,
+        "wagePerWorker" : 6,
+        "fixedPropertyTax" : 40,
+        "fixedRunningCost" : 50
+      },
+      "products" : [
+        {
+          "name" : "A",
+          "ingredients" : { },
+          "marketDemandFulfillmentRatio" : 100,
+          "baseDemandInKg" : 2.5,
+          "productionPerWorkshop" : 6.0,
+          "basePrice" : 33.0
+        },
+        {
+          "name" : "B",
+          "ingredients" : { "A" : 1.0 },
+          "marketDemandFulfillmentRatio" : 100,
+          "baseDemandInKg" : 2.5,
+          "productionPerWorkshop" : 6.0,
+          "basePrice" : 33.0
+        },
+        {
+          "name" : "C",
+          "ingredients" : { },
+          "marketDemandFulfillmentRatio" : 100,
+          "baseDemandInKg" : 2.5,
+          "productionPerWorkshop" : 6.0,
+          "basePrice" : 33.0
+        }
+      ]
+    }
+  }
+]
+
