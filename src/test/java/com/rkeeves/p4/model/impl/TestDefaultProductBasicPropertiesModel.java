@@ -1,15 +1,29 @@
 package com.rkeeves.p4.model.impl;
 
 import com.rkeeves.p4.dto.ProductDTO;
+import com.rkeeves.p4.io.JSONReadFailedException;
+import com.rkeeves.p4.io.JSONService;
+import com.rkeeves.p4.io.JacksonJSONService;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestDefaultProductBasicPropertiesModel {
+
+    private static final String TEST_CASE_ARRAY_RESOURCE_NAME = "/model/productBasicProperties/productDTOArray.json";
+
+    private static JSONService jsonService;
+
+    @BeforeAll
+    static void init(){
+        jsonService = new JacksonJSONService();
+    }
 
     @ParameterizedTest
     @MethodSource("create_provideTestCases")
@@ -22,25 +36,10 @@ class TestDefaultProductBasicPropertiesModel {
         assertEquals(dto.getProductionPerWorkshop(), model.getProductionPerWorkshopProperty().get());
     }
 
-    private static Stream<Arguments> create_provideTestCases(){
-        var dtoA = new ProductDTO();
-        dtoA.setName("A");
-        dtoA.setBaseDemandInKg(10.1);
-        dtoA.setBasePrice(10.6);
-        dtoA.setProductionPerWorkshop(65.5);
-        dtoA.setMarketDemandFulfillmentRatio(100);
-        dtoA.getIngredients().put("B",10.0);
-        var dtoB = new ProductDTO();
-        dtoB.setName("B");
-        dtoB.setBaseDemandInKg(1.1);
-        dtoB.setBasePrice(50.6);
-        dtoB.setProductionPerWorkshop(665.5);
-        dtoB.setMarketDemandFulfillmentRatio(70);
-        dtoB.getIngredients().put("C",16.0);
-        dtoB.getIngredients().put("D",17.0);
-        return Stream.of(
-                Arguments.of(dtoA),
-                Arguments.of(dtoB)
-        );
+    private static Stream<Arguments> create_provideTestCases() throws JSONReadFailedException {
+        var dtoArray = jsonService.readFromResource(TEST_CASE_ARRAY_RESOURCE_NAME,
+                ProductDTO[].class);
+        return Arrays.stream(dtoArray)
+                .map(Arguments::of);
     }
 }
