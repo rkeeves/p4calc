@@ -6,6 +6,12 @@ A basic calculator application for Patrician 4.
 
 Please refer to [this](https://github.com/rkeeves/p4calc/blob/main/SPREADSHEET.md).
 
+Direct links to OpenOffice spreadsheets within this repo:
+
+[This one is friendlier](https://github.com/rkeeves/p4calc/blob/main/spreadsheet/p4_streamlined.ods).
+
+[This one is scarier](https://github.com/rkeeves/p4calc/blob/main/spreadsheet/p4calc.ods).
+
 ## Build
 
 The project uses only maven.
